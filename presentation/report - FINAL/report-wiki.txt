@@ -1,0 +1,431 @@
+= FYP Report =
+
+== Abstract ==
+== Acknowledgements ==
+== Contents ==
+* Introduction
+* Project Design Strategy
+** Original Idea
+** Research Analysis
+** Modified Ideas
+
+* The Bot
+** Hardware Specifications
+*** Camera specs
+*** Hardware modules used
+*** Remote Specs
+*** Integration
+** Software Specifications
+*** Hardware Interface routines
+
+* Scene Analysis
+** Summary
+** General Concepts
+*** Theory of motion
+*** Optical Flow
+*** Horn Schunck Method (Optical Flow)
+*** Lucas Kanade (Optical Flow)
+*** Egomotion
+*** Kalman Filter
+*** Pattern Matching
+** Matlab
+*** Simulink
+*** Test runs (models + code)
+** OpenCV
+*** API features
+*** Test runs (code)
+* Conclusion
+* Appendix A: Blah
+* Appendix B: Blah2
+* References
+* Bibliography
+
+= Introduction =
+Scene Analysis forms the basis of '''Computer Vision''', an area of increasing importance in the technologies like '''''Robotics'''''. It involves using information mediated by light in order to interact successfully with the environment.
+
+== Computer Vision ==
+'''Computer vision''' is the study and application of methods which allow computers to "understand" image content or content of multidimensional data in general. The term "understand" means here that specific information is being extracted from the image data for a specific purpose: either for presenting it to a human operator (e. g., if cancerous cells have been detected in a microscopy image), or for controlling some process (e. g., an industry robot or an autonomous vehicle). The image data that is fed into a computer vision system is often a digital gray-scale or colour image, but can also be in the form of two or more such images (e. g., from a stereo camera pair), a video sequence, or a 3D volume (e. g., from a tomography device). In most practical computer vision applications, the computers are pre-programmed to solve a particular task, but methods based on learning are now becoming increasingly common.
+
+'''Computer vision''' can also be described as the complement (but not necessary the opposite) of biological vision. In biological vision and visual perception real vision systems of humans and various animals are studied, resulting in models of how these systems are implemented in terms of neural processing at various levels. Computer vision, on the other hand, studies and describes technical vision system which are implemented in software or hardware, in computers or in digital signal processors. There is some interdisciplinary work between biological and computer vision but, in general, the field of computer vision studies processing of visual data as a purely technical problem.
+
+The main reasons that computers are widely used for vision systems are:
+* they are versatile and have fully experimentally capability.
+* they are precise and efficience, ambiguities are not supported, unless specific programming.
+* computers are able to give precise computer process and the amount of digital memory they use for certain task. 
+
+Computer vision and other research areas:
+* computer vision research give new process and task to psycology, neurology, linguistic and philosophy.
+* computers can be use to reproduce process of biological vision systems in order to understand them, and they can be used to implement new theories and experimental processes in order to achieve similar vision goals or others.
+
+=== Related Fields ===
+'''Computer vision''', '''Image processing''', '''Image analysis''', '''Robot vision''' and '''Machine vision''' are closely related fields. If you look inside text books which have either of these names in the title there is a significant overlap in terms of what techniques and applications they cover. This implies that the basic techniques that are used and developed in these fields are more or less identical, something which can be interpreted as there is only one field with different names.
+
+On the other hand, it appears to be necessary for research groups, scientific journals, conferences and companies to present or market themselves as belonging specifically to one of these fields and, hence, various characterizations which distinguish each of the fields from the others have been presented. The following characterizations appear relevant but should not be taken as universally accepted.
+
+'''Image processing''' and '''Image analysis''' tend to focus on 2D images, how to transform one image to another, e.g., by pixel-wise operations such as contrast enhancement, local operations such as edge extraction or noise removal, or geometrical transformations such as rotating the image. This characterization implies that image processing/analysis does not produce nor require assumptions about what a specific image is an image of.
+
+'''Computer vision''' tends to focus on the 3D scene projected onto one or several images, e.g., how to reconstruct structure or other information about the 3D scene from one or several images. Computer vision often relies on more or less complex assumptions about the scene depicted in an image.
+
+'''Machine vision''' tends to focus on applications, mainly in industry, e.g., vision based autonomous robots and systems for vision based inspection or measurement. This implies that image sensor technologies and control theory often are integrated with the processing of image data to control a robot and that real-time processing is emphasized by means of efficient implementations in hardware and software.
+
+There is also a field called '''Imaging''' which primarily focus on the process of producing images, but sometimes also deals with processing and analysis of images. For example, Medical imaging contains lots of work on the analysis of image data in medical applications.
+
+Finally, '''pattern recognition''' is a field which uses various methods to extract information from signals in general, mainly based on statistical approaches. A significant part of this field is devoted to applying these methods to image data.
+
+A consequence of this state of affairs is that you can be working in a lab related to one of these fields, apply methods from a second field to solve a problem in a third field and present the result at a conference related to a fourth field!
+
+=== Examples of Applications of Computer Vision ===
+Another way to describe computer vision is in terms of applications areas. One of the most prominent application fields is medical computer vision or medical image processing. This area is characterized by the extraction of information from image data for the purpose of making a medical diagnosis of a patient. Typically image data is in the form of microscopy images, X-ray images, angiography images, ultrasonic images, and tomography images. An example of information which can be extracted from such image data is detection of tumours, arteriosclerosis or other malign changes. It can also be measurements of organ dimensions, blood flow, etc. This application area also supports medical research by providing new information, e.g., about the structure of the brain, or about the quality of medical treatments. 
+
+A second application area in computer vision is in industry. Here, information is extracted for the purpose of supporting a manufacturing process. One example is quality control where details or final products are being automatically inspected in order to find defects. Another example is measurement of position and orientation of details to be picked up by a robot arm. See the article on machine vision for more details on this area. 
+Military applications are probably one of the largest areas for computer vision, even though only a small part of this work is open to the public. The obvious examples are detection of enemy soldiers or vehicles and guidance of missiles to a designated target. More advanced systems for missile guidance send the missile to an area rather than a specific target, and target selection is made when the missile reaches the area based on locally acquired image data. 
+
+Modern military concepts, such as "battlefield awareness" imply that various sensors, including image sensors, provide a rich set of information about a combat scene which can be used to support strategic decisions. In this case, automatic processing of the data is used to reduce complexity and to fuse information from multiple sensors to increase reliability.
+
+One of the newer application areas is autonomous vehicles, which include submersibles, land-based vehicles (small robots with wheels, cars or trucks), and aerial vehicles. An unmanned aerial vehicle is often denoted UAV. The level of autonomy ranges from fully autonomous (unmanned) vehicles to vehicles where computer vision based systems support a driver or a pilot in various situations. Fully autonomous vehicles typically use computer vision for navigation, i.e. for knowing where it is, or for producing a map of its environment (SLAM) and for detecting obstacles. It can also be used for detecting certain task specific events, e. g., a UAV looking for forest fires. Examples of supporting system are obstacle warning systems in cars and systems for autonomous landing of aircraft. Several car manufacturers have demonstrated systems for autonomous driving of cars, but this technology has still not reached a level where it can be put on the market. There are ample examples of military autonomous vehicles ranging from advanced missiles to UAVs for recon missions or missile guidance. Space exploration is already being made with autonomous vehicles using computer vision, e. g., NASA's Mars Exploration Rover. 
+
+Other application areas include the creation of visual effects for cinema and broadcast, e.g., camera tracking or matchmoving, and surveillance.
+
+
+=== Theory of Motion ===
+=== Optical Flow ===
+Optical flow is a concept for estimating the motion of objects within a visual representation. Typically the motion is represented as vectors originating or terminating at pixels in a digital image sequence.
+
+Optical flow is useful in pattern recognition, computer vision, and other image processing applications. It is closely related to motion estimation and motion compensation. Often the term optical flow is used to describe a dense motion field with vectors at each pixel, as opposed to motion estimation or compensation which uses vectors for blocks of pixels, as in video compression methods such as MPEG. Some consider using optical flow for collision avoidance and altitude acquisition system for micro air vehicles (MAVs).
+
+=== Horn Schunck Method (Optical Flow) ===
+
+* http://en.wikipedia.org/wiki/Horn_Schunck_Method
+
+=== Lucas Kanade (Optical Flow) ===
+=== Egomotion ===
+
+Ego-motion means self motion or the motion of the observer. In computer vision it refers to the effects created by the motion of the camera itself. 
+The goal of ego-motion computation is to describe the motion of an object with respect to an external reference system, by analyzing data acquired by sensors on-board on the object i.e. the camera itself.
+
+Examples:
+* Given two images of a scene, determine the 3d rigid motion of the camera between the two views.
+
+==== Problems ====
+
+Ego-motion leads to problems in motion segmentation based scene analysis.  When a scene (image) is being segmented on the basis of moving objects, the real motion (velocity, orientation etc.) of objects might appear to be different than the factual value. 
+
+a. Wrong determination of velocity/orientation.
+b. Static objects might be perceived as moving objects. 
+
+==== Solutions ====
+
+A lot of solutions have been proposed to compensate for ego-motion, most of them being targeted to particular environments or situations, like urban traffic etc.
+The proposed solutions fall under a few broad categories like:
+
+a. Using the knowledge of the environment to separate or remove background features.
+b. Using knowledge about the motion of the observer (camera) itself, like velocity of a car, if the camera is mounted on a car.
+c. Probabilistic methods to estimate background features.
+d. Techniques from stereoscopic vision to perceive depth, and separate background.
+e. Some combination of the aforementioned techniques.
+
+==== Scope of ego-motion in our project ====
+
+Ego-motion poses the greatest problem in roverbot navigation as it is almost impossible to avoid obstacles and track targets without identifying targets from obstacles. The problem emerges from the movement of the camera mounted on the roverbot. Unless the problem is solved, it will create major difficulties in the implementation of autonomous navigation.
+
+=== Kalman Filter ===
+
+=== Pattern Matching ===
+
+
+
+== Image Processing ==
+In the broadest sense, '''image processing''' is any form of information processing for which both the input and output are images, such as photographs or frames of video. Most image processing techniques involve treating the image as a two-dimensional signal and applying standard signal processing techniques to it.
+
+=== Solution Methods===
+
+A few decades ago, image processing was done largely in the analog domain, chiefly by optical devices. These optical methods are still essential to applications such as holography because they are inherently parallel; however, due to the significant increase in computer speed, these techniques are increasingly being replaced by digital image processing methods.
+
+Digital image processing techniques are generally more versatile, reliable, and accurate; they have the additional benefit of being easier to implement than their analog counterparts. Specialized hardware is still used for digital image processing: computer architectures based on pipelining have been the most commercially successful. There are also many massively parallel architectures that have been developed for the purpose. Today, hardware solutions are commonly used in video processing systems. However, commercial image processing tasks are more commonly done by software running on conventional personal computers.
+
+=== Commonly Used Signal Processing Techniques ===
+
+Most of the signal processing concepts that apply to one-dimensional signals also extend to the two-dimensional image signal. Some of these one-dimensional signal processing concepts become significantly more complicated in two-dimensional processing. Image processing brings some new concepts, such as connectivity and rotational invariance, that are meaningful only for two-dimensional signals.
+
+The fast fourier transform is often used for image processing operations because it reduces the amount of data and the necessary processing time.
+
+'''One-Dimensional Techniques'''
+* Resolution
+* Dynamic range
+* Bandwidth
+* Filtering
+* Differential operators
+* Edge detection
+* Domain modulation
+* Noise reduction 
+
+'''Two-Dimensional Techniques'''
+* Connectivity
+* Rotational invariance
+
+'''Applications'''
+* Photography and printing
+* Satellite image processing
+* Medical image processing
+* Face detection, feature detection, face identification
+* Microscope image processing
+* Car barrier detection
+
+=== Feature Extraction ===
+
+'''Feature Extraction''' is the process of generating a set of descriptors or characteristic attributes from an image, like edge, curves, etc.
+
+==== Low-level feature extraction ====
+
+===== Overview =====
+
+Low-level feature detection refers to those basic features that can be extracted automatically from an image without any shape information. As such, thresholding is actually a form of low-level feature extraction performed as a point operation. Other examples include edge detection and curvature estimation.
+
+===== First-order edge detection operators =====
+
+First-order edge detection is akin to first-order differentiation. In image processing, differentiation is implemented using finite differences.
+
+====== Basic operators ======
+
+Basic edge detection can be implemented using differencing between adjacent pixels.
+Differencing horizontally adjacent pixels leads to the detection of vertical edges, the differencing operator is called a horizontal edge detector, perhaps a misnomer.
+Similarly horizontal edges can be detected using a vertical edge detector.
+The vertical and horizontal edge detectors can be combined to form a general first-order edge detector. 
+
+A sample first-order edge detector might be like :
+
+ [ 2 -1 ]
+ [ -1 0 ]
+
+====== Prewitt edge detection operator ======
+
+The Prewitt edge detector has the following mask : 
+
+ Mx = [ 1 0 -1 ]
+      [ 1 0 -1 ]
+      [ 1 0 -1 ]
+
+ My = [  1  1  1 ]
+      [  0  0  0 ]
+      [ -1 -1 -1 ]
+
+====== Sobel edge detection operator ======
+
+The sobel edge detector has the following mask :
+
+ Mx = [ 1 0 -1 ]
+      [ 2 0 -2 ]
+      [ 1 0 -1 ]
+
+ My = [  1  2  1 ]
+      [  0  0  0 ]
+      [ -1 -2 -1 ]
+
+====== Canny edge detector ======
+
+One of the most popular edge detectors of recent years, developed by Canny, uses the outputs of two Gaussian derivative masks. The two outputs are combined by squaring and adding. The peaks of ridges are then found. Ridges that contain a peak over a given threshold are retained as long as they stay above another, lower threshold.
+
+===== Second-order edge detection operators =====
+
+Second-order edge detection is a form of second-order differentiation. 
+
+====== Laplacian operator ======
+
+The Laplacian operator is a template which implements second-order differencing. The second-order differential can be approximated by the difference between two adjacent first-order differences : 
+
+ f"(x) = f'(x) - f'(x+1)
+
+which leads to :
+
+ f"(x) = -f(x) + 2f(x+1) - f(x+2)
+
+This gives a horizontal second-order template :
+
+ [ -1 2 -1 ]
+
+or a combined 2D template :
+
+ [  0 -1   0 ]
+ [ -1  4  -1 ]
+ [  0 -1   0 ]
+
+or 
+
+ [ -1 -1  -1 ]
+ [ -1  8  -1 ]
+ [ -1 -1  -1 ]
+
+====== Marr-Hildreth operator ======
+
+The Marr-Hildreth operator is a combination of the Gaussian smoothing filter ( mask ) and the Laplacian filter ( mask ). Combining them gives a LoG ( Laplacian of Gaussian ) or DoG ( Difference of Gaussians ) or the mexican-hat operator.
+A sample mask can be :
+
+ [ 0  0 -1  0  0 ]
+ [ 0 -1 -2 -1  0 ]
+ [-1 -2 16 -2 -1 ]
+ [ 0 -1 -2 -1  0 ]
+ [ 0  0 -1  0  0 ]
+
+==== High-level feature extraction ====
+
+===== Template Matching =====
+
+Template matching is conceptually a simple process. We need to match a template to an image, where the template is a sub-image that contains the shape we are trying to find. Accordingly, we center the template on an image point and count up how many points in the template match those in the image. The procedure is repeated for the entire image and the point which led to the best match, the maximum count, is deemed to be the point where the shape ( given by the template ) lies within the image.
+The commonly methods used to match templates are :
+
+*Sum of squared differences ( minimization )
+*Normalized sum of squared differences ( minimization )
+*Cross correlation ( maximization )
+*Normalized cross correlation ( maximization )
+*Correlation coefficient ( maximization )
+*Normalized correlation coefficient ( maximization )
+
+===== Hough Transform =====
+
+The Hough Transform is a technique that locates shapes in images. In particular, it has been used to extract lines, circles and ellipses ( or conic sections ). In the case of lines it mathematical definition is equivalent to the Radon transform. 
+The HT implementation defines a mapping from the image points into an accumulator space ( Hough space ). The mapping is achieved in a computationally efficient manner, based on the function that describes the target shape. This mapping requires much less computational resources than template matching. However, it still requires significant storage and high computational requirements. 
+
+Though the GHT ( Generalized Hough Transform ) can be used to extract any shape from an image, specialised versions are used for lines, circles, ellipses and other commonly encountered shapes.
+
+==== Flexible shape extraction ( snakes ) ====
+
+Active contours or snakes are a completely different approach to feature extraction. An active contour is a set of points which aims to enclose a target feature, the feature to be extracted. It is a bit like using a balloon to find a shape: the balloon is placed outside the shape, enclosing it. Then by taking air out of the balloon, making it smaller, the shape is found when the balloon stops shrinking, when it fits the target shape. By this manner, active contours arrange a set of points so as to describe a target feature by enclosing it.
+
+An initial contour is placed outside the target feature, and is then evolved so as to enclose it. Active contours are actually expressed as an ''energy minimization'' process. The target feature is a minimum of a suitably formulated energy functional. This energy functional includes more than just edge information: it includes properties that control the way the contours can stretch and curve. In this way, a snake represents a compromise between its own properties (like its ability to bend and stretch) and image properties (like the edge magnitude). Accordingly, the energy functional is the addition of a function of the contour's internal energy, its constraint energy, and the image energy: these are denoted E<sub>int</sub>, E<sub>image</sub>, and E<sub>con</sub>, respectively. These are functions of the set of points which make up a snake, v(s), which is the set of x and y coordinates of the points in the snake. The energy functional is the integral of these functions of the snake, given s E [0, 1] is the normalized length around the snake.
+
+=== Pattern Recognition ===
+=== Fuzzy Logic ===
+
+Similar Topics go here
+
+== General Concepts ==
+= Project Design Strategy =
+==Original Idea==
+
+=== Main Objective ===
+To design a mobile robotic vehicle controlled wirelessly through a base station. The lightweight vehicle will transmit images back to the base station and receive directions. The directions can be made specific to a task that it is currently performing.
+
+=== Main Project Modules ===
+* Matlab/OpenCV for Image Processing
+* Hardware Design: Vehicle and and Wireless Solution
+* Software Design
+
+=== Matlab/OpenCV ===
+
+Initially we plan to work with Matlab and later maybe port it over to OpenCV. The considersations are as follows:
+
+* The robot vehicle will be transmitting live video
+* Assume maximum wireless transmission speed of 11Mbps or 54Mbps (over 802.11g)
+
+=== Hardware ===
+
+The following are common in both approaches:
+* A PIC microcontroller would interface to the hardware gear which will actually drive the vehicle
+* The same PIC microcontroller will handle all the input sensor data
+ 
+=== Software Design ===
+
+This segment actually depends upon what kind of approach we use. The general idea of the software design part is to design a communication interface between the robot and the base station.
+
+In the 'cow' approach:
+* We don't need to send every frame of the stream. Limited patterns can be dealt directly on the Robochuriyan.
+* Each time a new link is established a new set of intelligence should be downloaded on the robot.
+* Image or video stream can be requested by the base station for analysis or live tracking
+* The synchronization could be done through compressed XML data (for Cow approach).
+
+In the 'chicken' approach:
+* There is very limited (and complex) software design on the Robochuriyan end which would take the data from the video devices and sensors, compress them and send them over to the wifi base station.
+
+==Research Analysis==
+
+=== Design Approaches ===
+
+Two design approaches have been devised by the team depending on how much functionality to incorporate into our roverbot. The two approaches are analogous to a Thin Client/Fat Client classification.
+
+==== Design Approach # 1 ====
+To put an entire computer inside the remote vehicle, for example a laptop or a pentium motherboard which would be running a complete operating system. This approach will be necessary in order to start in any case as preliminary testing will be done over Matlab and a visual environment for rapid development.
+
+===== Pros =====
+* Can use wireless lan to transfer data instead of a customized solution.
+* The robot can employ its own guidance mechanism if the base station link terminates.
+
+===== Cons =====
+* Bulky vehicle.
+
+===== Possible Solutions =====
+* Use a laptop.
+* Use a micro-ATX board with a frame-grabber card or USB.
+* Run Linux/Windows.
+
+==== Design Approach # 2 ====
+The vehicle will be fitted with only sensors and cameras. All the processing is done over the base station. This kind of vehicle will have its own applications.
+
+===== Pros =====
+* Small vehicle.
+* The product can showcase as: "Just install this card over your robot and bring it to life!". The card being our customized solution for sending video to the base station.
+
+===== Cons =====
+* If the base station connection breaks, the robot will not know what to do.
+* If live video is to be transmitted, we'd need to find a suitable microcontroller and make an interface from the video camera and send the video over wire/air.
+
+===== Possible Solutions =====
+* Use some kind of PIC board with embedded video interface and optionally a Bluetooth/Wifi interface as well.
+* Use a home wireless spy-camera solution (comes with receiver and free software).
+
+== Modified Ideas ==
+
+=== Finalized Hardware ===
+* Use a miniature spy camera which will operate on RF.
+* Process atmost 10 frames per second, 4 frames is average and 2 or single frame for development.
+* Use a ready-made vehicle with modified remote control interfaced to PC.
+* Wifi will not be used.
+* No processing on the robot itself.
+
+=== Finalized Software ===
+* Matlab 7/2006a using the Image Acquisition and Image Processing toolboxes.
+* Simulink Video and Image Processing Toolbox, for initial design and fast code generation for the final product.
+* Matlab Distributed Computing Engine (incase distributed processing has to be used).
+* Distribution on Grid is not decided yet (see section below)
+
+=== Robot Characteristics ===
+* Robot may be given two locations, source A and destination B and robot will move to that location by avoiding obstructions (Simulates Delivery).
+* Robot may be locked onto a particular target and the robot will follow that target by avoiding obstacles (Simulates missile behaviour).
+* The robot will navigate around itself freely by avoiding obstructions (Simulates surveillance).
+
+= The Bot =
+== Hardware Specifications ==
+=== Camera specs ===
+=== Hardware modules used ===
+=== Remote Specs ===
+=== Integration ===
+== Software Specifications ==
+=== Hardware Interface routines ===
+
+= Scene Analysis =
+== Summary == 
+Loads of text with embedded examples of scene analysis done by our roverbot.
+== Matlab ==
+=== Simulink ===
+
+Simulink is a component of Matlab. It is a software package for modeling, simulating, and analyzing dynamic systems. It supports linear and nonlinear systems, modeled in continuous time, sampled time, or a hybrid of the two. Systems can also be multirate, i.e., have different parts that are sampled or updated at different rates.
+
+=== VIP Blockset ===
+
+The Video and Image Processing Blockset is a tool used for the rapid design, prototyping, graphical simulation, and efficient code generation of video processing algorithms. The Video and Image Processing Blockset blocks can import streaming video into the Simulink environment and perform two-dimensional filtering, geometric and frequency transforms, block processing, motion estimation, edge detection and other signal processing algorithms.
+
+=== Test runs (models + code) ===
+* [[FYP:Matlab-FN|Matlab Models - FN]]
+
+== OpenCV ==
+=== API features ===
+=== Test runs (code) ===
+
+= Conclusion =
+= Appendices =
+= References =
+
+[http://en.wikipedia.org] Wikipedia
+
+[http://www.cogs.susx.ac.uk/users/davidy/compvis/] David Young's Lecture series (from University of Sussex, UK)
+
+= Bibliography =

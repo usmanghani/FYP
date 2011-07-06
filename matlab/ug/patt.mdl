@@ -1,0 +1,2605 @@
+Model {
+  Name			  "patt"
+  Version		  6.4
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.720"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  PreLoadFcn		  "\n"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  on
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  on
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  CloseFcn		  "vipdh_pattern_clear;"
+  InitFcn		  "vipdh_pattern;"
+  Created		  "Wed Dec 11 08:05:01 2002"
+  Creator		  "witek"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "Administrator"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Apr 25 15:26:52 2006"
+  ModelVersionFormat	  "1.%<AutoIncrement:720>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  ProdHWDeviceType	  "Specified"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.2.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.2.0"
+	  StartTime		  "0.0"
+	  StopTime		  "20"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.2.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  off
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  off
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.2.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg on
+	  CheckExecutionContextRuntimeOutputMsg	on
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StrictBusMsg		  "None"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.2.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "Specified"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.2.0"
+	  UpdateModelReferenceTargets "IfOutOfDate"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeERTFirstTime     on
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      ExtraOptions	      "-aInitFltsAndDblsToZero=1 "
+      CurrentDlgPage	      "Real-Time Workshop/Symbols"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  WSDataSource		  "M-Code"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Bias
+      Bias		      "0"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Concatenate
+      NumInputs		      "2"
+    }
+    Block {
+      BlockType		      Constant
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      OutDataTypeMode	      "Inherit via back propagation"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      FunctionName	      "mlfile"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      InputSameDT	      on
+      LogicOutDataTypeMode    "Logical (see Configuration Parameters: Optimiza"
+"tion)"
+      LogicDataType	      "uint(8)"
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Selector
+      InputType		      "Vector"
+      IndexMode		      "One-based"
+      ElementSrc	      "Internal"
+      Elements		      "1"
+      RowSrc		      "Internal"
+      Rows		      "1"
+      ColumnSrc		      "Internal"
+      Columns		      "1"
+      InputPortWidth	      "-1"
+      IndexIsStartValue	      off
+      OutputPortSize	      "1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      Stop
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutDataTypeMode	      "Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "patt"
+    Location		    [2, 70, 1022, 720]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    212
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "Cat video"
+      Ports		      [0, 2]
+      Position		      [55, 144, 175, 191]
+      DialogController	      "dspDDGCreate"
+      DialogControllerArgs    "DataTag0"
+      SourceBlock	      "dspwin32/From Multimedia File"
+      SourceType	      "From Multimedia File"
+      inputFilename	      "C:\\fypthings\\things2.avi"
+      loop		      on
+      numPlays		      "inf"
+      outputStreams	      "Video and audio"
+      videoDataType	      "uint8"
+      audioDataType	      "int16"
+      inheritSampleTime	      on
+      userDefinedSampleTime   "1/30"
+      noAudioOutput	      off
+      isIntensityVideo	      on
+      outputEOF		      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Frame Rate\nDisplay"
+      Ports		      [1]
+      Position		      [595, 454, 650, 486]
+      DialogController	      "vipDDGCreate"
+      DialogControllerArgs    "DataTag1"
+      SourceBlock	      "vipsnks/Frame Rate\nDisplay"
+      SourceType	      "Frame Rate Display"
+      UpdateRate	      "10"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Highlight the target"
+      Ports		      [2]
+      Position		      [595, 292, 650, 423]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      System {
+	Name			"Highlight the target"
+	Location		[557, 372, 920, 517]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "target ROI"
+	  Position		  [30, 48, 60, 62]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "IUT"
+	  Position		  [30, 78, 60, 92]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Highlight\nTarget"
+	  Ports			  [2, 1]
+	  Position		  [110, 39, 180, 101]
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Highlight\nTarget"
+	    Location		    [507, 539, 1000, 759]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "target ROI"
+	      Position		      [25, 63, 55, 77]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "IUT"
+	      Position		      [25, 33, 55, 47]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Add inner\nrectangle"
+	      Ports		      [1, 1]
+	      Position		      [145, 122, 210, 168]
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      System {
+		Name			"Add inner\nrectangle"
+		Location		[428, 821, 893, 971]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "ROI"
+		  Position		  [25, 63, 55, 77]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Bias
+		  Name			  "Bias"
+		  Position		  [245, 30, 285, 60]
+		  Bias			  "1"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Bias
+		  Name			  "Bias1"
+		  Position		  [245, 90, 285, 120]
+		  Bias			  "-2"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  DataTypeConversion
+		  Name			  "Data Type Conversion"
+		  Position		  [90, 54, 140, 86]
+		  ShowName		  off
+		  OutDataTypeMode	  "int32"
+		  RndMeth		  "Floor"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Concatenate
+		  Name			  "Matrix\nConcatenation"
+		  Ports			  [2, 1]
+		  Position		  [330, 34, 385, 76]
+		  ShowName		  off
+		  Mode			  "Horizontal matrix concatenation"
+		}
+		Block {
+		  BlockType		  Selector
+		  Name			  "Selector"
+		  Ports			  [1, 1]
+		  Position		  [180, 26, 220, 64]
+		  ShowName		  off
+		  IndexMode		  "Zero-based"
+		  Elements		  "[0 1]"
+		  InputPortWidth	  "4"
+		}
+		Block {
+		  BlockType		  Selector
+		  Name			  "Selector1"
+		  Ports			  [1, 1]
+		  Position		  [180, 86, 220, 124]
+		  ShowName		  off
+		  IndexMode		  "Zero-based"
+		  Elements		  "[2 3]"
+		  InputPortWidth	  "4"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Pts"
+		  Position		  [410, 48, 440, 62]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Selector"
+		  SrcPort		  1
+		  DstBlock		  "Bias"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Selector1"
+		  SrcPort		  1
+		  DstBlock		  "Bias1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Bias"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Matrix\nConcatenation"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Bias1"
+		  SrcPort		  1
+		  Points		  [15, 0; 0, -40]
+		  DstBlock		  "Matrix\nConcatenation"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Data Type Conversion"
+		  SrcPort		  1
+		  Points		  [10, 0; 0, -5]
+		  Branch {
+		    Points		    [0, -20]
+		    DstBlock		    "Selector"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 40]
+		    DstBlock		    "Selector1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "ROI"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Data Type Conversion"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Matrix\nConcatenation"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Pts"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Draw Shapes"
+	      Ports		      [2, 1]
+	      Position		      [130, 27, 215, 83]
+	      DialogController	      "vipDDGCreate"
+	      DialogControllerArgs    "DataTag2"
+	      SourceBlock	      "viptextngfix/Draw Shapes"
+	      SourceType	      "Draw Shapes"
+	      inType		      "Intensity"
+	      shape		      "Rectangles"
+	      fill		      off
+	      display		      "Black"
+	      intensity		      "200"
+	      color		      "[200 255 100]"
+	      opacity		      "0.6"
+	      viewport		      "Entire image"
+	      antialiasing	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Draw Shapes1"
+	      Ports		      [2, 1]
+	      Position		      [295, 42, 380, 98]
+	      DialogController	      "vipDDGCreate"
+	      DialogControllerArgs    "DataTag3"
+	      SourceBlock	      "viptextngfix/Draw Shapes"
+	      SourceType	      "Draw Shapes"
+	      inType		      "Intensity"
+	      shape		      "Rectangles"
+	      fill		      off
+	      display		      "White"
+	      intensity		      "200"
+	      color		      "[200 255 100]"
+	      opacity		      "0.6"
+	      viewport		      "Entire image"
+	      antialiasing	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "I"
+	      Position		      [430, 63, 460, 77]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "IUT"
+	      SrcPort		      1
+	      DstBlock		      "Draw Shapes"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "target ROI"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		DstBlock		"Draw Shapes"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 75]
+		DstBlock		"Add inner\nrectangle"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Add inner\nrectangle"
+	      SrcPort		      1
+	      Points		      [65, 0]
+	      DstBlock		      "Draw Shapes1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Draw Shapes1"
+	      SrcPort		      1
+	      DstBlock		      "I"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Draw Shapes"
+	      SrcPort		      1
+	      DstBlock		      "Draw Shapes1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Overlay the ROI\nonthe target"
+	  Ports			  [1]
+	  Position		  [230, 36, 295, 104]
+	  SourceBlock		  "vipsnks/To Video Display"
+	  SourceType		  "To Video Display"
+	  inputType		  "Intensity"
+	  OutputDevice		  "On-screen video monitor"
+	  fullScreen		  off
+	  videoWindowX		  "292"
+	  videoWindowY		  "157"
+	  saveWindowSize	  off
+	  videoWindowWidth	  "168"
+	  videoWindowHeight	  "147"
+	}
+	Line {
+	  SrcBlock		  "Highlight\nTarget"
+	  SrcPort		  1
+	  DstBlock		  "Overlay the ROI\nonthe target"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "target ROI"
+	  SrcPort		  1
+	  DstBlock		  "Highlight\nTarget"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "IUT"
+	  SrcPort		  1
+	  DstBlock		  "Highlight\nTarget"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Info"
+      Ports		      []
+      Position		      [210, 519, 264, 571]
+      ShowName		      off
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "vipmisc/Info"
+      SourceType	      "Info"
+      ShowPortLabels	      on
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Match metric"
+      Ports		      [1]
+      Position		      [595, 253, 645, 267]
+      Floating		      off
+      Location		      [423, 252, 761, 533]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      TimeRange		      "10"
+      YMin		      "0.75"
+      YMax		      "1"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Pyramiding factor"
+      Ports		      []
+      Position		      [384, 522, 493, 571]
+      BackgroundColor	      "yellow"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      FontName		      "Arial"
+      FontSize		      14
+      FontWeight	      "bold"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Pyramiding factor"
+      MaskDescription	      "The pyramiding factor is used to scale the inpu"
+"t video so that the \ncross-correlation is performed on a much smaller video "
+"frame thus\nspeeding up the pattern matching process.  The factor can be any"
+"\nnumber from 1 to 5.  The accuracy of the match will degrade\nproportionatel"
+"y to the size of the pyramiding factor."
+      MaskPromptString	      "Pyramiding factor"
+      MaskStyleString	      "popup(1|2|3|4|5)"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "pfactor=@1;"
+      MaskDisplay	      "disp('Set pyramiding\\n factor')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "5"
+      System {
+	Name			"Pyramiding factor"
+	Location		[131, 213, 669, 386]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Search for this\ntarget"
+      Ports		      [0, 1]
+      Position		      [265, 260, 335, 330]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskDisplay	      "image(repmat(imread('things2_target.jpg'),[1,1,"
+"3]))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Search for this\ntarget"
+	Location		[2, 74, 798, 556]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "precomputed fft of the\nrotated target patt"
+"ern"
+	  Position		  [30, 30, 115, 60]
+	  Value			  "target_fft"
+	  VectorParams1D	  off
+	  SamplingMode		  "Sample based"
+	  OutDataTypeMode	  "single"
+	  OutDataType		  "sfix(16)"
+	  ConRadixGroup		  "Use specified scaling"
+	  OutScaling		  "2^0"
+	  SampleTime		  "inf"
+	  FramePeriod		  "inf"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Target"
+	  Position		  [225, 38, 255, 52]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "precomputed fft of the\nrotated target patt"
+"ern"
+	  SrcPort		  1
+	  Points		  [65, 0]
+	  DstBlock		  "Target"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Spatial-domain Demo"
+      Ports		      []
+      Position		      [580, 521, 691, 571]
+      BackgroundColor	      "yellow"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      OpenFcn		      "patt_spat"
+      FontName		      "Arial"
+      FontSize		      14
+      FontWeight	      "bold"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Spatial-domain Demo"
+      MaskDisplay	      "disp('Spatial-domain\\nDemo')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Spatial-domain Demo"
+	Location		[2, 70, 1022, 720]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      Stop
+      Name		      "Stop Simulation"
+      Position		      [250, 172, 285, 208]
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Target detection and tracking"
+      Ports		      [3, 4]
+      Position		      [380, 158, 530, 427]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      System {
+	Name			"Target detection and tracking"
+	Location		[143, 369, 938, 681]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Image Under Test (IUT)"
+	  Position		  [50, 73, 80, 87]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "target"
+	  Position		  [290, 128, 320, 142]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "threshold"
+	  Position		  [490, 193, 520, 207]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  DataTypeConversion
+	  Name			  "Data Type \nConversion"
+	  Position		  [165, 66, 220, 94]
+	  ShowName		  off
+	  OutDataTypeMode	  "single"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Locate target1"
+	  Ports			  [2, 2]
+	  Position		  [570, 133, 675, 222]
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Locate target1"
+	    Location		    [465, 123, 991, 459]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "X-corr"
+	      Position		      [30, 107, 60, 123]
+	      NamePlacement	      "alternate"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "threshold"
+	      Position		      [205, 310, 235, 330]
+	      Orientation	      "up"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "2-D Maximum"
+	      Ports		      [1, 2]
+	      Position		      [100, 95, 155, 135]
+	      DialogController	      "dspDDGCreate"
+	      DialogControllerArgs    "DataTag4"
+	      SourceBlock	      "vipstatistics/2-D Maximum"
+	      SourceType	      "2-D Maximum"
+	      fcn		      "Value and Index"
+	      reset		      "None"
+	      additionalParams	      off
+	      allowOverrides	      on
+	      accumMode		      "Same as product output"
+	      accumWordLength	      "32"
+	      accumFracLength	      "30"
+	      prodOutputMode	      "Same as input"
+	      prodOutputWordLength    "32"
+	      prodOutputFracLength    "30"
+	      roundingMode	      "Nearest"
+	      overflowMode	      off
+	      LockScale		      off
+	    }
+	    Block {
+	      BlockType		      Concatenate
+	      Name		      "Matrix\nConcatenation"
+	      Ports		      [2, 1]
+	      Position		      [240, 84, 295, 126]
+	      ShowName		      off
+	      Mode		      "Horizontal matrix concatenation"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "create target ROI"
+	      Ports		      [3, 1]
+	      Position		      [275, 137, 350, 293]
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      System {
+		Name			"create target ROI"
+		Location		[530, 491, 985, 738]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "metric"
+		  Position		  [30, 168, 60, 182]
+		  NamePlacement		  "alternate"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Idx"
+		  Position		  [25, 48, 55, 62]
+		  NamePlacement		  "alternate"
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "threshold"
+		  Position		  [30, 188, 60, 202]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  Position		  [135, 40, 165, 70]
+		  ShowName		  off
+		  Gain			  "1/pyramiding_factor"
+		  ParameterDataTypeMode	  "Specify via dialog"
+		  ParameterDataType	  "float('single')"
+		  ParameterScalingMode	  "Best Precision: Element-wise"
+		  ParameterScaling	  "2^-16"
+		  RndMeth		  "Nearest"
+		}
+		Block {
+		  BlockType		  Concatenate
+		  Name			  "Matrix\nConcatenation"
+		  Ports			  [2, 1]
+		  Position		  [220, 44, 275, 86]
+		  ShowName		  off
+		  Mode			  "Horizontal matrix concatenation"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "ROI dimensions"
+		  Position		  [40, 109, 165, 131]
+		  Value			  "target_dim_nopyramid"
+		  VectorParams1D	  off
+		  SamplingMode		  "Sample based"
+		  OutDataTypeMode	  "uint32"
+		  OutDataType		  "sfix(16)"
+		  ConRadixGroup		  "Use specified scaling"
+		  OutScaling		  "2^0"
+		  SampleTime		  "inf"
+		  FramePeriod		  "inf"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch"
+		  Position		  [305, 115, 335, 145]
+		  Threshold		  "0.85"
+		  InputSameDT		  off
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "no ROI"
+		  Position		  [200, 200, 245, 220]
+		  Value			  "[0 0 0 0]"
+		  VectorParams1D	  on
+		  SamplingMode		  "Sample based"
+		  OutDataTypeMode	  "uint32"
+		  OutDataType		  "sfix(16)"
+		  ConRadixGroup		  "Use specified scaling"
+		  OutScaling		  "2^0"
+		  SampleTime		  "inf"
+		  FramePeriod		  "inf"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "relational operator"
+		  Position		  [100, 165, 135, 205]
+		  ShowName		  off
+		  Operator		  ">"
+		  InputSameDT		  off
+		  LogicOutDataTypeMode	  "Boolean"
+		  ZeroCross		  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "target ROI"
+		  Position		  [395, 123, 425, 137]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Idx"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  DstBlock		  "Matrix\nConcatenation"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "relational operator"
+		  SrcPort		  1
+		  Points		  [75, 0; 0, -55]
+		  DstBlock		  "Switch"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "threshold"
+		  SrcPort		  1
+		  DstBlock		  "relational operator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "metric"
+		  SrcPort		  1
+		  DstBlock		  "relational operator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "no ROI"
+		  SrcPort		  1
+		  Points		  [30, 0; 0, -70]
+		  DstBlock		  "Switch"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Switch"
+		  SrcPort		  1
+		  DstBlock		  "target ROI"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "ROI dimensions"
+		  SrcPort		  1
+		  Points		  [35, 0]
+		  DstBlock		  "Matrix\nConcatenation"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Matrix\nConcatenation"
+		  SrcPort		  1
+		  Points		  [5, 0; 0, 55]
+		  DstBlock		  "Switch"
+		  DstPort		  1
+		}
+		Annotation {
+		  Name			  "Correct for\n pyramiding"
+		  Position		  [152, 16]
+		  DropShadow		  on
+		  UseDisplayTextAsClickCallback	off
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "metric and\nthresh"
+	      Position		      [390, 98, 420, 112]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "target ROI"
+	      Position		      [390, 208, 420, 222]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "2-D Maximum"
+	      SrcPort		      2
+	      Points		      [20, 0; 0, 90]
+	      DstBlock		      "create target ROI"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "create target ROI"
+	      SrcPort		      1
+	      DstBlock		      "target ROI"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "X-corr"
+	      SrcPort		      1
+	      DstBlock		      "2-D Maximum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "2-D Maximum"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      Branch {
+		Points			[0, 60]
+		DstBlock		"create target ROI"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -10]
+		DstBlock		"Matrix\nConcatenation"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "threshold"
+	      SrcPort		      1
+	      Points		      [0, 0; 0, -40]
+	      Branch {
+		DstBlock		"create target ROI"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, -150]
+		DstBlock		"Matrix\nConcatenation"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Matrix\nConcatenation"
+	      SrcPort		      1
+	      DstBlock		      "metric and\nthresh"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "Find location of the best match\nbetwee"
+"n the target and IUT, \ncompensate for pyramiding"
+	      Position		      [267, 30]
+	      DropShadow	      on
+	      UseDisplayTextAsClickCallback off
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Normalized X-corr in\nfrequency domain"
+	  Ports			  [2, 1]
+	  Position		  [385, 52, 425, 163]
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Normalized X-corr in\nfrequency domain"
+	    Location		    [412, 461, 856, 676]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "IUT"
+	      Position		      [20, 78, 50, 92]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "target"
+	      Position		      [20, 123, 50, 137]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Cross-correlation in\nfrequency domain"
+	      Ports		      [2, 1]
+	      Position		      [105, 60, 195, 155]
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      System {
+		Name			"Cross-correlation in\nfrequency domai"
+"n"
+		Location		[175, 359, 867, 526]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "IUT"
+		  Position		  [20, 58, 50, 72]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Target"
+		  Position		  [20, 103, 50, 117]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "2-D FFT"
+		  Ports			  [1, 1]
+		  Position		  [250, 48, 300, 82]
+		  ShowName		  off
+		  DialogController	  "vipDDGCreate"
+		  DialogControllerArgs	  "DataTag5"
+		  SourceBlock		  "viptransforms/2-D FFT"
+		  SourceType		  "2-D FFT"
+		  TableOpt		  "Speed"
+		  BitRevOrder		  off
+		  SkipNorm		  off
+		  firstCoeffMode	  "Same word length as input"
+		  firstCoeffWordLength	  "16"
+		  firstCoeffFracLength	  "15"
+		  outputMode		  "Same as input"
+		  outputWordLength	  "16"
+		  outputFracLength	  "15"
+		  accumMode		  "Same as product output"
+		  accumWordLength	  "32"
+		  accumFracLength	  "30"
+		  prodOutputMode	  "Same as input"
+		  prodOutputWordLength	  "32"
+		  prodOutputFracLength	  "30"
+		  roundingMode		  "Floor"
+		  overflowMode		  off
+		  LockScale		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "2-D IFFT"
+		  Ports			  [1, 1]
+		  Position		  [425, 69, 480, 101]
+		  ShowName		  off
+		  DialogController	  "vipDDGCreate"
+		  DialogControllerArgs	  "DataTag6"
+		  SourceBlock		  "viptransforms/2-D IFFT"
+		  SourceType		  "2-D IFFT "
+		  ShowPortLabels	  on
+		  SystemSampleTime	  "-1"
+		  FunctionWithSeparateData off
+		  RTWMemSecFuncInitTerm	  "Inherit from model"
+		  RTWMemSecFuncExecute	  "Inherit from model"
+		  RTWMemSecDataConstants  "Inherit from model"
+		  RTWMemSecDataInternal	  "Inherit from model"
+		  RTWMemSecDataParameters "Inherit from model"
+		  TableOpt		  "Speed"
+		  BitRevOrder		  off
+		  cs_in			  on
+		  SkipNorm		  off
+		  firstCoeffMode	  "Same word length as input"
+		  firstCoeffWordLength	  "16"
+		  firstCoeffFracLength	  "15"
+		  outputMode		  "Same as input"
+		  outputWordLength	  "16"
+		  outputFracLength	  "15"
+		  accumMode		  "Same as product output"
+		  accumWordLength	  "32"
+		  accumFracLength	  "30"
+		  prodOutputMode	  "Same as input"
+		  prodOutputWordLength	  "32"
+		  prodOutputFracLength	  "30"
+		  roundingMode		  "Floor"
+		  overflowMode		  off
+		  LockScale		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "2-D Pad"
+		  Ports			  [1, 1]
+		  Position		  [110, 47, 190, 83]
+		  ShowName		  off
+		  SourceBlock		  "viputilities/2-D Pad"
+		  SourceType		  "2-D Pad"
+		  method		  "Constant"
+		  valSrc		  "Specify via dialog"
+		  value			  "0"
+		  spec			  "Output size"
+		  rowDirection		  "Right"
+		  rowSize		  "2"
+		  outColSize		  "2^nextpow2(iut_dim(2)+target_dim(2)"
+"+1)"
+		  colDirection		  "Bottom"
+		  colSize		  "[2 3]"
+		  outRowSize		  "2^nextpow2(iut_dim(1)+target_dim(1)"
+"+1)"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product"
+		  Ports			  [2, 1]
+		  Position		  [345, 67, 375, 98]
+		  ShowName		  off
+		  InputSameDT		  off
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Submatrix"
+		  Ports			  [1, 1]
+		  Position		  [530, 65, 580, 105]
+		  ShowName		  off
+		  SourceBlock		  "dspmtrx3/Submatrix"
+		  SourceType		  "Submatrix"
+		  RowSpan		  "Range of rows"
+		  RowStartMode		  "Index"
+		  RowStartIndex		  "target_dim(1)"
+		  RowEndMode		  "Index"
+		  RowEndIndex		  "iut_dim(1)"
+		  ColSpan		  "Range of columns"
+		  ColStartMode		  "Index"
+		  ColStartIndex		  "target_dim(2)"
+		  ColEndMode		  "Index"
+		  ColEndIndex		  "iut_dim(2)"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "X-Corr"
+		  Position		  [615, 78, 645, 92]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Product"
+		  SrcPort		  1
+		  DstBlock		  "2-D IFFT"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "2-D FFT"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, 10]
+		  DstBlock		  "Product"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "2-D IFFT"
+		  SrcPort		  1
+		  DstBlock		  "Submatrix"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Submatrix"
+		  SrcPort		  1
+		  DstBlock		  "X-Corr"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "IUT"
+		  SrcPort		  1
+		  DstBlock		  "2-D Pad"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Target"
+		  SrcPort		  1
+		  Points		  [270, 0; 0, -20]
+		  DstBlock		  "Product"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "2-D Pad"
+		  SrcPort		  1
+		  DstBlock		  "2-D FFT"
+		  DstPort		  1
+		}
+		Annotation {
+		  Name			  "the FFT of the target template was "
+"pre-computed"
+		  Position		  [191, 132]
+		  DropShadow		  on
+		  UseDisplayTextAsClickCallback	off
+		}
+		Annotation {
+		  Name			  "Zero-pad the array to avoid \ncircu"
+"lar convolution"
+		  Position		  [186, 20]
+		  DropShadow		  on
+		  UseDisplayTextAsClickCallback	off
+		}
+		Annotation {
+		  Name			  "Extract the valid part\nof the corr"
+"elation"
+		  Position		  [557, 40]
+		  DropShadow		  on
+		  UseDisplayTextAsClickCallback	off
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Normalize"
+	      Ports		      [2, 1]
+	      Position		      [230, 29, 315, 91]
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      System {
+		Name			"Normalize"
+		Location		[271, 250, 769, 567]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "IUT"
+		  Position		  [25, 173, 55, 187]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "X-corr"
+		  Position		  [25, 230, 55, 250]
+		  NamePlacement		  "alternate"
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "<b,b> matrix"
+		  Ports			  [1, 1]
+		  Position		  [140, 165, 225, 195]
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "<b,b> matrix"
+		    Location		    [268, 328, 773, 493]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    "[0.500000, 0.500000, 0.500000, 0."
+"500000]"
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "IUT"
+		    Position		    [50, 68, 80, 82]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction"
+		    Ports		    [1, 1]
+		    Position		    [335, 60, 365, 90]
+		    ShowName		    off
+		    Operator		    "sqrt"
+		    }
+		    Block {
+		    BlockType		    Math
+		    Name		    "Math\nFunction1"
+		    Ports		    [1, 1]
+		    Position		    [135, 60, 165, 90]
+		    ShowName		    off
+		    Operator		    "square"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "compute local sums"
+		    Ports		    [1, 1]
+		    Position		    [210, 57, 285, 93]
+		    ShowName		    off
+		    DialogController	    "vipDDGCreate"
+		    DialogControllerArgs    "DataTag7"
+		    SourceBlock		    "vipfilter/2-D FIR Filter"
+		    SourceType		    "2-D FIR Filter"
+		    separable		    off
+		    filtSrc		    "Specify via dialog"
+		    filterMtrx		    "ones(target_dim)"
+		    verticalFilter	    "[4 0]"
+		    horizontalFilter	    "[4 0]"
+		    outSize		    "Valid"
+		    padType		    "Constant"
+		    padSrc		    "Specify via dialog"
+		    padVal		    "0"
+		    method		    "Convolution"
+		    firstCoeffMode	    "Same word length as input"
+		    firstCoeffWordLength    "16"
+		    firstCoeffFracLength    "15"
+		    outputMode		    "Same as input"
+		    outputWordLength	    "16"
+		    outputFracLength	    "15"
+		    accumMode		    "Same as product output"
+		    accumWordLength	    "32"
+		    accumFracLength	    "30"
+		    prodOutputMode	    "Same as input"
+		    prodOutputWordLength    "32"
+		    prodOutputFracLength    "30"
+		    roundingMode	    "Floor"
+		    overflowMode	    off
+		    LockScale		    off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "<b,b>"
+		    Position		    [415, 68, 445, 82]
+		    IconDisplay		    "Port number"
+		    BusOutputAsStruct	    off
+		    }
+		    Line {
+		    SrcBlock		    "compute local sums"
+		    SrcPort		    1
+		    DstBlock		    "Math\nFunction"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "IUT"
+		    SrcPort		    1
+		    DstBlock		    "Math\nFunction1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction1"
+		    SrcPort		    1
+		    DstBlock		    "compute local sums"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Math\nFunction"
+		    SrcPort		    1
+		    DstBlock		    "<b,b>"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "Block process tiles that are the "
+"size of the target template"
+		    Position		    [271, 27]
+		    UseDisplayTextAsClickCallback off
+		    }
+		    Annotation {
+		    Name		    "use 2-D filter to\ncompute local "
+"sums"
+		    Position		    [245, 124]
+		    DropShadow		    on
+		    UseDisplayTextAsClickCallback off
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Normalize"
+		  Ports			  [3, 1]
+		  Position		  [310, 89, 345, 271]
+		  Inputs		  "//*"
+		  InputSameDT		  off
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Precomputed <a,a>\nfor the target"
+		  Ports			  [0, 1]
+		  Position		  [30, 98, 70, 142]
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskHideContents	  off
+		  MaskDisplay		  "image(repmat(imread('cat_target.png"
+"'),[1,1,3]))"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "Precomputed <a,a>\nfor the target"
+		    Location		    [491, 501, 837, 610]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    "[0.500000, 0.500000, 0.500000, 0."
+"500000]"
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Constant
+		    Name		    "precomputed fft of the\nrotated t"
+"arget pattern"
+		    Position		    [30, 30, 115, 60]
+		    Value		    "target_sq_sum"
+		    VectorParams1D	    off
+		    SamplingMode	    "Sample based"
+		    OutDataTypeMode	    "single"
+		    OutDataType		    "sfix(16)"
+		    ConRadixGroup	    "Use specified scaling"
+		    OutScaling		    "2^0"
+		    SampleTime		    "inf"
+		    FramePeriod		    "inf"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Target"
+		    Position		    [235, 38, 265, 52]
+		    IconDisplay		    "Port number"
+		    BusOutputAsStruct	    off
+		    }
+		    Line {
+		    SrcBlock		    "precomputed fft of the\nrotated t"
+"arget pattern"
+		    SrcPort		    1
+		    DstBlock		    "Target"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Norm X-corr"
+		  Position		  [435, 170, 465, 190]
+		  NamePlacement		  "alternate"
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "IUT"
+		  SrcPort		  1
+		  DstBlock		  "<b,b> matrix"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Normalize"
+		  SrcPort		  1
+		  DstBlock		  "Norm X-corr"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "<b,b> matrix"
+		  SrcPort		  1
+		  DstBlock		  "Normalize"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Precomputed <a,a>\nfor the target"
+		  SrcPort		  1
+		  DstBlock		  "Normalize"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "X-corr"
+		  SrcPort		  1
+		  DstBlock		  "Normalize"
+		  DstPort		  3
+		}
+		Annotation {
+		  Name			  "Schwarz' inequality:  \n-1 <= <a,b>"
+"/sqrt(<a,a>*<b,b>) <= 1\n(here 'a' is the target and 'b' is the IUT)"
+		  Position		  [246, 39]
+		  UseDisplayTextAsClickCallback	off
+		  FontSize		  14
+		  FontWeight		  "bold"
+		}
+		Annotation {
+		  Name			  "<a,a> scalar"
+		  Position		  [184, 108]
+		  UseDisplayTextAsClickCallback	off
+		}
+		Annotation {
+		  Name			  "<a,b> matrix"
+		  Position		  [184, 257]
+		  UseDisplayTextAsClickCallback	off
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "X-corr"
+	      Position		      [355, 53, 385, 67]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Cross-correlation in\nfrequency domain"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "Normalize"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "IUT"
+	      SrcPort		      1
+	      Points		      [5, 0; 15, 0]
+	      Branch {
+		Points			[0, -40]
+		DstBlock		"Normalize"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Cross-correlation in\nfrequency domai"
+"n"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Normalize"
+	      SrcPort		      1
+	      DstBlock		      "X-corr"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "target"
+	      SrcPort		      1
+	      DstBlock		      "Cross-correlation in\nfrequency domain"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Name		      "Use Schwarz' inequality\nto normalize t"
+"he output"
+	      Position		      [331, 134]
+	      DropShadow	      on
+	      UseDisplayTextAsClickCallback off
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Resize"
+	  Ports			  [1, 1]
+	  Position		  [270, 60, 340, 100]
+	  ShowName		  off
+	  DialogController	  "vipDDGCreate"
+	  DialogControllerArgs	  "DataTag8"
+	  SourceBlock		  "vipgeotforms/Resize"
+	  SourceType		  "Resize"
+	  specify		  "Output size as a percentage of input size"
+	  rfactor		  "pyramiding_factor*100"
+	  outCols		  "25"
+	  outRows		  "25"
+	  outRowsCols		  "[25 35]"
+	  interp_method		  "Bicubic"
+	  antialias		  off
+	  firstCoeffMode	  "Same word length as input"
+	  firstCoeffWordLength	  "0"
+	  firstCoeffFracLength	  "0"
+	  outputMode		  "Same as input"
+	  outputWordLength	  "0"
+	  outputFracLength	  "0"
+	  accumMode		  "Same as input"
+	  accumWordLength	  "0"
+	  accumFracLength	  "0"
+	  prodOutputMode	  "Same as input"
+	  prodOutputWordLength	  "0"
+	  prodOutputFracLength	  "0"
+	  roundingMode		  "Floor"
+	  overflowMode		  off
+	  LockScale		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "X-corr"
+	  Position		  [725, 103, 755, 117]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "match metric"
+	  Position		  [725, 148, 755, 162]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "target ROI"
+	  Position		  [725, 193, 755, 207]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "IUT"
+	  Position		  [125, 38, 155, 52]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "target"
+	  SrcPort		  1
+	  DstBlock		  "Normalized X-corr in\nfrequency domain"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Image Under Test (IUT)"
+	  SrcPort		  1
+	  Points		  [0, 0; 10, 0]
+	  Branch {
+	    Points		    [0, -35]
+	    DstBlock		    "IUT"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Data Type \nConversion"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Normalized X-corr in\nfrequency domain"
+	  SrcPort		  1
+	  Points		  [0, 0; 110, 0]
+	  Branch {
+	    DstBlock		    "X-corr"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 45]
+	    DstBlock		    "Locate target1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Locate target1"
+	  SrcPort		  2
+	  DstBlock		  "target ROI"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Locate target1"
+	  SrcPort		  1
+	  DstBlock		  "match metric"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Data Type \nConversion"
+	  SrcPort		  1
+	  DstBlock		  "Resize"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "threshold"
+	  SrcPort		  1
+	  DstBlock		  "Locate target1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Resize"
+	  SrcPort		  1
+	  DstBlock		  "Normalized X-corr in\nfrequency domain"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "Apply pyramiding"
+	  Position		  [305, 42]
+	  DropShadow		  on
+	  UseDisplayTextAsClickCallback	off
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "X-corr"
+      Ports		      [1]
+      Position		      [595, 170, 640, 220]
+      DialogController	      "dspdialog.MatrixViewer"
+      DialogControllerArgs    "DataTag9"
+      SourceBlock	      "dspsnks4/Matrix\nViewer"
+      SourceType	      "Matrix Viewer"
+      ShowPortLabels	      off
+      ImageParams	      on
+      CMapStr		      "hot(256)"
+      YMin		      "0.7"
+      YMax		      "1"
+      AxisColorbar	      on
+      AxisParams	      on
+      AxisOrigin	      "Upper left corner"
+      XLabel		      "X-axis"
+      YLabel		      "Y-axis"
+      ZLabel		      "Z-axis"
+      FigPos		      "[578 341 369 234]"
+      AxisZoom		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "threshold"
+      Position		      [265, 374, 335, 396]
+      BackgroundColor	      "yellow"
+      Value		      "single(0.90)"
+      VectorParams1D	      off
+      SamplingMode	      "Sample based"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Line {
+      Labels		      [0, 0]
+      SrcBlock		      "Search for this\ntarget"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Target detection and tracking"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Target detection and tracking"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "X-corr"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Target detection and tracking"
+      SrcPort		      2
+      DstBlock		      "Match metric"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "threshold"
+      SrcPort		      1
+      DstBlock		      "Target detection and tracking"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Target detection and tracking"
+      SrcPort		      3
+      DstBlock		      "Highlight the target"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Target detection and tracking"
+      SrcPort		      4
+      Points		      [0, 0; 15, 0]
+      Branch {
+	DstBlock		"Highlight the target"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 80]
+	DstBlock		"Frame Rate\nDisplay"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Cat video"
+      SrcPort		      1
+      Points		      [185, 0]
+      DstBlock		      "Target detection and tracking"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Cat video"
+      SrcPort		      2
+      Points		      [25, 0; 0, 10]
+      DstBlock		      "Stop Simulation"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "Pattern matching"
+      Position		      [453, 104]
+      DropShadow	      on
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      16
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "uses cross-correlation in frequency domain"
+      Position		      [451, 133]
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+  }
+}
+MatData {
+  NumRecords		  10
+  DataRecord {
+    Tag			    DataTag9
+    Data		    "  %)30     .    ,     8    (    !          %    "
+"\"                0         0          "
+  }
+  DataRecord {
+    Tag			    DataTag8
+    Data		    "  %)30     .    :     8    (     0         %    "
+"\"     $    !     0         .    .     8    (    !          %    \"     $    "
+"(     0         0    \"    %)E<VEZ93)$"
+  }
+  DataRecord {
+    Tag			    DataTag7
+    Data		    "  %)30     .    <     8    (     0         %    "
+"\"     $    !     0         .    0     8    (    !          %    \"     $    "
+"+     0         0    \"P   $9)4D9I;'1E<C)$       "
+  }
+  DataRecord {
+    Tag			    DataTag6
+    Data		    "  %)30     .    :     8    (     0         %    "
+"\"     $    !     0         .    .     8    (    !          %    \"     $    "
+"&     0         0    !@   $E&1E0R1   "
+  }
+  DataRecord {
+    Tag			    DataTag5
+    Data		    "  %)30     .    :     8    (     0         %    "
+"\"     $    !     0         .    .     8    (    !          %    \"     $    "
+"%     0         0    !0   $9&5#)$    "
+  }
+  DataRecord {
+    Tag			    DataTag4
+    Data		    "  %)30     .    :     8    (     0         %    "
+"\"     $    !     0         .    .     8    (    !          %    \"     $    "
+"&     0         0    !@   $UI;DUA>   "
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    N     8    (     0         %    "
+"\"     $    \"     0         .    0     8    (    !          %    \"     $   "
+" *     0         0    \"@   $1R87=3:&%P97,        .    0     8    (    !     "
+"     %    \"     $    )     0         0    \"0   '9I<&1I86QO9P         "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    N     8    (     0         %    "
+"\"     $    \"     0         .    0     8    (    !          %    \"     $   "
+" *     0         0    \"@   $1R87=3:&%P97,        .    0     8    (    !     "
+"     %    \"     $    )     0         0    \"0   '9I<&1I86QO9P         "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    N     8    (     0         %    "
+"\"     $    \"     0         .    0     8    (    !          %    \"     $   "
+" 0     0         0    $    $9R86UE4F%T941I<W!L87D.    0     8    (    !      "
+"    %    \"     $    )     0         0    \"0   '9I<&1I86QO9P         "
+  }
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    N     8    (     0         %    "
+"\"     $    \"     0         .    0     8    (    !          %    \"     $   "
+" *     0         0    \"@   $9R;VU-349I;&4        .    0     8    (    !     "
+"     %    \"     $    )     0         0    \"0   &1S<&1I86QO9P         "
+  }
+}
+
+# Finite State Machines
+#
+#    Stateflow Version 6.4 (R2006a) dated Feb  2 2006, 05:30:12
+#
+#
+
+Stateflow {
+
+	machine {
+		id                   		1
+		name                 		"patt"
+		created              		"23-Apr-2003 09:07:33"
+		isLibrary            		0
+		firstTarget          		2
+		sfVersion            		64014000
+	}
+
+	target {
+		id                        		2
+		name                      		"sfun"
+		description               		"Default Simulink S-Function Target."
+		codeFlags                 		" debug=0 overflow=0 echo=0"
+		machine                   		1
+		linkNode                  		[1 0 3]
+	}
+
+	target {
+		id                        		3
+		name                      		"rtw"
+		codeFlags                 		" comments=1 statebitsets=1 databitsets=1 emitlogicalops=1 el"
+						"seifdetection=1 constantfolding=1 redundantloadelimination=0"
+						" preserveconstantnames=0 preservenames=0 preservenameswithpa"
+						"rent=0 exportcharts=0"
+		machine                   		1
+		linkNode                  		[1 2 0]
+	}
+}

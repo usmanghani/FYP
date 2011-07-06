@@ -1,0 +1,36 @@
+The Roverbot Motion Library consists of routines that control the motion of the robotic vehicle. Using simple routines such as Forward, Backward, Left and Right we will attempt to control the roverbot motion with the greatest accuracy as possible.
+
+<< Simulink Model Snapshot >>
+
+== Hardware Interface ==
+In order to send commands pertaining to movement of the bot, a hardware interface has been developed between the Remote-Control of the vehicle and our software using the Parallel Port (LPT1). The software reads/writes a byte of data to the Port0 of LPT1 to control the bot's motion.
+
+<< A picture of the circuit will go here >>
+
+=== Bit Combinations ===
+In order to convey the four commands to the bot, the last four bits of LPT1's Port0 are used. Reading from LSB towards MSB, each bit acts as a trigger for Forward, Backward, Right and Left commands with bit '1' signifying activation of motion and bit '0' signifying the de-activation.
+
+The bit combinations used by the software are described as follows:
+
+'''FORWARD - ON'''  : X X X X X X 0 1
+
+'''FORWARD - OFF''' : X X X X X X 0 0
+
+'''BACKWARD - ON''' : X X X X X X 1 0
+
+'''BACKWARD - OFF''': X X X X X X 0 0
+
+'''RIGHT - ON'''    : X X X X 0 1 X X
+
+'''RIGHT - OFF'''   : X X X X 0 0 X X
+
+'''LEFT - ON'''     : X X X X 1 0 X X
+
+'''LEFT - OFF'''    : X X X X 0 0 X X
+
+where '''X''' denotes don't cares.
+
+Note that for '''Forward''' motion, the bit signifying '''Backward''' motion is also set to zero to avoid conflicts and vice versa. The same is the case with '''Left''' and '''Right''' motion.
+
+== Software Routines ==
+The software routines have been written in Matlab. An 8-bit buffer reads/writes pin status from Port0 of LPT1.  This ensures that the same command is never sent twice to the port's pins by storing the last-sent command in a buffer variable.

@@ -1,0 +1,9 @@
+Links in Refs.
+Insert References
+Appendix: Glossary
+No Bold,only Italics
+Number equations and matrices
+explain sim blocks
+Done==Bib to Ref.
+Done==Figure Nums and labels.
+Done==Heading Font Sizes => 12pt

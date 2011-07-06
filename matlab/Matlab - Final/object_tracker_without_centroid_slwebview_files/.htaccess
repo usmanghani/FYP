@@ -1,0 +1,9 @@
+# Apache server settings.  Used to set SVG file mime-types for Mozilla
+
+# Copyright 1997-2005 The MathWorks, Inc.
+# $Revision: 1.1.6.1 $  $Date: 2005/12/19 07:33:54 $
+
+AddType image/svg+xml .svg
+AddType image/svg+xml .svgz
+AddEncoding gzip .svgz
+IndexIgnore *

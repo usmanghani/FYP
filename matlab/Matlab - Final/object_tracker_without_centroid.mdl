@@ -1,0 +1,4543 @@
+Model {
+  Name			  "object_tracker_without_centroid"
+  Version		  6.4
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.1820"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  StartFcn		  "ppo_start"
+  StopFcn		  "ppo_stop"
+  Created		  "Tue Mar 11 19:44:39 2003"
+  Creator		  "don"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "Raza"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Sat Dec 16 15:17:08 2006"
+  ModelVersionFormat	  "1.%<AutoIncrement:1820>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.2.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.2.0"
+	  StartTime		  "0.0"
+	  StopTime		  "inf"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.2.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  off
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  off
+	  SaveState		  off
+	  SignalLogging		  off
+	  InspectSignalLogs	  off
+	  SaveTime		  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.2.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "none"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg on
+	  CheckExecutionContextRuntimeOutputMsg	on
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "none"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "none"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StrictBusMsg		  "None"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.2.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "32-bit Generic"
+	  TargetUnknown		  off
+	  ProdEqTarget		  off
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.2.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		13
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"GenerateTestInterfaces"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeERTFirstTime     on
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  WSDataSource		  "M-Code"
+  WSMCode		  "line_row =  22;"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      BusCreator
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      BusSelector
+      OutputAsBus	      off
+    }
+    Block {
+      BlockType		      Concatenate
+      NumInputs		      "2"
+    }
+    Block {
+      BlockType		      Constant
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      OutDataTypeMode	      "Inherit via back propagation"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      FunctionName	      "mlfile"
+    }
+    Block {
+      BlockType		      MultiPortSwitch
+      Inputs		      "4"
+      zeroidx		      off
+      InputSameDT	      on
+      OutDataTypeMode	      "Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      InputSameDT	      on
+      LogicOutDataTypeMode    "Logical (see Configuration Parameters: Optimiza"
+"tion)"
+      LogicDataType	      "uint(8)"
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "object_tracker_without_centroid"
+    Location		    [2, 70, 1022, 720]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    282
+    ScreenColor		    "white"
+    PaperOrientation	    "rotated"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      BusCreator
+      Name		      "Bus\nCreator"
+      Ports		      [3, 1]
+      Position		      [475, 228, 480, 282]
+      ShowName		      off
+      FontSize		      12
+      Inputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Color Space\n Conversion"
+      Ports		      [3, 1]
+      Position		      [315, 119, 400, 171]
+      ShowName		      off
+      FontSize		      12
+      SourceBlock	      "vipconversions/Color Space\n Conversion"
+      SourceType	      "Color Space Conversion"
+      conversion	      "R'G'B' to intensity"
+      wp_str		      "D65"
+      rec		      "Rec. 601 (SDTV)"
+      sys		      "1125/60/2:1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Display Results"
+      Ports		      [9]
+      Position		      [865, 84, 995, 296]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      System {
+	Name			"Display Results"
+	Location		[104, 78, 803, 677]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Th. Img"
+	  Position		  [30, 88, 60, 102]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Count"
+	  Position		  [30, 128, 60, 142]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "BBox"
+	  Position		  [30, 188, 60, 202]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Video In"
+	  Position		  [30, 248, 60, 262]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Centroid"
+	  Position		  [30, 308, 60, 322]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "EOF"
+	  Position		  [35, 363, 65, 377]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "StartCoords"
+	  Position		  [35, 418, 65, 432]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "VidSize"
+	  Position		  [35, 453, 65, 467]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "VidOriginal"
+	  Position		  [35, 488, 65, 502]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector"
+	  Ports			  [1, 3]
+	  Position		  [420, 206, 425, 274]
+	  ShowName		  off
+	  FontSize		  12
+	  OutputSignals		  "R,G,B"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<R>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<G>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "<B>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Display bounding boxes"
+	  Ports			  [7, 1]
+	  Position		  [280, 117, 380, 363]
+	  FontSize		  12
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Display bounding boxes"
+	    Location		    [2, 74, 1014, 724]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Count"
+	      Position		      [35, 193, 65, 207]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "BBox"
+	      Position		      [35, 152, 65, 168]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Video In"
+	      Position		      [35, 102, 65, 118]
+	      NamePlacement	      "alternate"
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Centroid"
+	      Position		      [35, 227, 65, 243]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "EOF"
+	      Position		      [30, 267, 60, 283]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "StartCoords"
+	      Position		      [35, 307, 65, 323]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VidSize"
+	      Position		      [35, 347, 65, 363]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator"
+	      Ports		      [3, 1]
+	      Position		      [930, 257, 935, 323]
+	      ShowName		      off
+	      Inputs		      "3"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector"
+	      Ports		      [1, 3]
+	      Position		      [100, 70, 105, 150]
+	      ShowName		      off
+	      OutputSignals	      "signal1,signal2,signal3"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Draw Markers"
+	      Ports		      [4, 3]
+	      Position		      [455, 100, 555, 165]
+	      SourceBlock	      "viptextngfix/Draw Markers"
+	      SourceType	      "Draw Markers"
+	      inType		      "RGB"
+	      shape		      "X-mark"
+	      size		      "3"
+	      fill		      off
+	      display		      "White"
+	      intensity		      "155"
+	      color		      "[200 120 50]"
+	      opacity		      "1"
+	      viewport		      "Entire image"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Draw Shapes"
+	      Ports		      [4, 3]
+	      Position		      [155, 75, 235, 170]
+	      DialogController	      "vipDDGCreate"
+	      DialogControllerArgs    "DataTag0"
+	      SourceBlock	      "viptextngfix/Draw Shapes"
+	      SourceType	      "Draw Shapes"
+	      inType		      "RGB"
+	      shape		      "Rectangles"
+	      fill		      off
+	      display		      "User-specified value"
+	      intensity		      "200"
+	      color		      "[0 1 0]"
+	      opacity		      "0.6"
+	      viewport		      "Entire image"
+	      antialiasing	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Draw vector"
+	      Ports		      [4, 3]
+	      Position		      [615, 105, 715, 170]
+	      DialogController	      "vipDDGCreate"
+	      DialogControllerArgs    "DataTag1"
+	      SourceBlock	      "viptextngfix/Draw Shapes"
+	      SourceType	      "Draw Shapes"
+	      inType		      "RGB"
+	      shape		      "Lines"
+	      fill		      off
+	      display		      "White"
+	      intensity		      "200"
+	      color		      "[200 255 100]"
+	      opacity		      "0.6"
+	      viewport		      "Entire image"
+	      antialiasing	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Draw white line"
+	      Ports		      [1, 1]
+	      Position		      [280, 82, 330, 108]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      SourceBlock	      "dspmtrx3/Overwrite Values"
+	      SourceType	      "Overwrite Values"
+	      OverWriteDiag	      "Submatrix"
+	      valFrom2ndIP	      "Specify via dialog"
+	      ConstValue	      "1"
+	      RowSpan		      "Range of rows"
+	      RowStartMode	      "Index"
+	      RowStartIndex	      "22"
+	      RowEndMode	      "Index"
+	      RowEndIndex	      "22+1"
+	      ColSpan		      "All columns"
+	      ColStartMode	      "First"
+	      ColStartIndex	      "1"
+	      ColEndMode	      "Last"
+	      ColEndIndex	      "1"
+	      DiagSpan		      "Range of elements"
+	      DiagStartMode	      "Index"
+	      DiagStartIndex	      "2"
+	      DiagEndMode	      "Index"
+	      DiagEndIndex	      "4"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Draw white line1"
+	      Ports		      [1, 1]
+	      Position		      [280, 112, 330, 138]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      SourceBlock	      "dspmtrx3/Overwrite Values"
+	      SourceType	      "Overwrite Values"
+	      OverWriteDiag	      "Submatrix"
+	      valFrom2ndIP	      "Specify via dialog"
+	      ConstValue	      "1"
+	      RowSpan		      "Range of rows"
+	      RowStartMode	      "Index"
+	      RowStartIndex	      "22"
+	      RowEndMode	      "Index"
+	      RowEndIndex	      "22+1"
+	      ColSpan		      "All columns"
+	      ColStartMode	      "First"
+	      ColStartIndex	      "1"
+	      ColEndMode	      "Last"
+	      ColEndIndex	      "1"
+	      DiagSpan		      "Range of elements"
+	      DiagStartMode	      "Index"
+	      DiagStartIndex	      "2"
+	      DiagEndMode	      "Index"
+	      DiagEndIndex	      "4"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Draw white line2"
+	      Ports		      [1, 1]
+	      Position		      [280, 147, 330, 173]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      SourceBlock	      "dspmtrx3/Overwrite Values"
+	      SourceType	      "Overwrite Values"
+	      OverWriteDiag	      "Submatrix"
+	      valFrom2ndIP	      "Specify via dialog"
+	      ConstValue	      "1"
+	      RowSpan		      "Range of rows"
+	      RowStartMode	      "Index"
+	      RowStartIndex	      "22"
+	      RowEndMode	      "Index"
+	      RowEndIndex	      "22+1"
+	      ColSpan		      "All columns"
+	      ColStartMode	      "First"
+	      ColStartIndex	      "1"
+	      ColEndMode	      "Last"
+	      ColEndIndex	      "1"
+	      DiagSpan		      "Range of elements"
+	      DiagStartMode	      "Index"
+	      DiagStartIndex	      "2"
+	      DiagEndMode	      "Index"
+	      DiagEndIndex	      "4"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Embedded\nMATLAB Function"
+	      Ports		      [4, 3]
+	      Position		      [185, 261, 355, 349]
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "Stateflow"
+	      MaskDescription	      "Embedded MATLAB block"
+	      MaskDisplay	      "disp('ObjectTracker');"
+	      MaskSelfModifiable      on
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      off
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Embedded\nMATLAB Function"
+		Location		[257, 457, 812, 717]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "CentroidArray"
+		  Position		  [20, 101, 40, 119]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "booleof"
+		  Position		  [20, 136, 40, 154]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "StartCoords"
+		  Position		  [20, 171, 40, 189]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "VidSize"
+		  Position		  [20, 206, 40, 224]
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  " Demux "
+		  Ports			  [1, 1]
+		  Position		  [270, 220, 320, 260]
+		  Outputs		  "1"
+		}
+		Block {
+		  BlockType		  "S-Function"
+		  Name			  " SFunction "
+		  Tag			  "Stateflow S-Function object_tracker"
+"_without_centroid 2"
+		  Ports			  [4, 4]
+		  Position		  [180, 100, 230, 220]
+		  FunctionName		  "sf_sfun"
+		  PortCounts		  "[4 4]"
+		  Port {
+		    PortNumber		    2
+		    Name		    "CentroidCoords"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    Name		    "LineVector"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    4
+		    Name		    "CentroidCol"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  " Terminator "
+		  Position		  [460, 231, 480, 249]
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "CentroidCoords"
+		  Position		  [460, 101, 480, 119]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "LineVector"
+		  Position		  [460, 136, 480, 154]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "CentroidCol"
+		  Position		  [460, 171, 480, 189]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  " SFunction "
+		  SrcPort		  1
+		  Points		  [0, 125]
+		  DstBlock		  " Demux "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  " Demux "
+		  SrcPort		  1
+		  DstBlock		  " Terminator "
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "CentroidCoords"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  2
+		  DstBlock		  "CentroidCoords"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "CentroidArray"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "LineVector"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  3
+		  DstBlock		  "LineVector"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "booleof"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "StartCoords"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "VidSize"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  4
+		}
+		Line {
+		  Name			  "CentroidCol"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  4
+		  DstBlock		  "CentroidCol"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Insert Text"
+	      Ports		      [4, 3]
+	      Position		      [730, 252, 835, 338]
+	      SourceBlock	      "viptextngfix/Insert Text"
+	      SourceType	      "Insert Text"
+	      inputType		      "RGB"
+	      theText		      "'%4d'"
+	      fontFace		      "Arial"
+	      dummyVar1		      "0"
+	      blockFontSize	      "12"
+	      antiAliased	      on
+	      getTextLocFrom	      "Specify via dialog"
+	      textLoc		      "[0 0]"
+	      getTextColorFrom	      "Specify via dialog"
+	      textColor		      "[1 1 1]"
+	      getTextIntensityFrom    "Specify via dialog"
+	      textIntensity	      "1"
+	      getTextOpacityFrom      "Specify via dialog"
+	      textOpacity	      "1.0"
+	      dummyVar2		      "0"
+	      dummyVar3		      "0"
+	      dummyVar4		      "0"
+	      Port {
+		PortNumber		1
+		Name			"R"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"G"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"B"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Insert Text1"
+	      Ports		      [4, 3]
+	      Position		      [745, 109, 840, 191]
+	      SourceBlock	      "viptextngfix/Insert Text"
+	      SourceType	      "Insert Text"
+	      inputType		      "RGB"
+	      theText		      "'(%2.0f,%2.0f)'"
+	      fontFace		      "Arial"
+	      dummyVar1		      "0"
+	      blockFontSize	      "12"
+	      antiAliased	      on
+	      getTextLocFrom	      "Specify via dialog"
+	      textLoc		      "[0 40]"
+	      getTextColorFrom	      "Specify via dialog"
+	      textColor		      "[1 1 1]"
+	      getTextIntensityFrom    "Specify via dialog"
+	      textIntensity	      "1"
+	      getTextOpacityFrom      "Specify via dialog"
+	      textOpacity	      "1.0"
+	      dummyVar2		      "0"
+	      dummyVar3		      "0"
+	      dummyVar4		      "0"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "NavigationLogic"
+	      Ports		      [6, 3]
+	      Position		      [565, 364, 690, 496]
+	      Orientation	      "left"
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      System {
+		Name			"NavigationLogic"
+		Location		[2, 74, 1014, 724]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"110"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Red"
+		  Position		  [40, 273, 70, 287]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Green"
+		  Position		  [40, 303, 70, 317]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Blue"
+		  Position		  [40, 338, 70, 352]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "CentroidCol"
+		  Position		  [35, 63, 65, 77]
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "StartCoords"
+		  Position		  [35, 93, 65, 107]
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "BlobCount"
+		  Position		  [50, 528, 80, 542]
+		  Port			  "6"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  BusCreator
+		  Name			  "Bus\nCreator1"
+		  Ports			  [3, 1]
+		  Position		  [365, 267, 370, 333]
+		  ShowName		  off
+		  Inputs		  "3"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  BusCreator
+		  Name			  "Bus\nCreator2"
+		  Ports			  [3, 1]
+		  Position		  [365, 367, 370, 433]
+		  ShowName		  off
+		  Inputs		  "3"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  BusCreator
+		  Name			  "Bus\nCreator3"
+		  Ports			  [3, 1]
+		  Position		  [365, 182, 370, 248]
+		  ShowName		  off
+		  Inputs		  "3"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  BusCreator
+		  Name			  "Bus\nCreator4"
+		  Ports			  [3, 1]
+		  Position		  [365, 462, 370, 528]
+		  ShowName		  off
+		  Inputs		  "3"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  BusSelector
+		  Name			  "Bus\nSelector1"
+		  Ports			  [1, 3]
+		  Position		  [700, 65, 705, 145]
+		  ShowName		  off
+		  OutputSignals		  "signal1,signal2,signal3"
+		  Port {
+		    PortNumber		    1
+		    Name		    "<signal1>"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    2
+		    Name		    "<signal2>"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    Name		    "<signal3>"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Embedded\nMATLAB Function1"
+		  Ports			  [2]
+		  Position		  [545, 314, 615, 361]
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskHideContents	  off
+		  MaskType		  "Stateflow"
+		  MaskDescription	  "Embedded MATLAB block"
+		  MaskDisplay		  "disp('Turnit');"
+		  MaskSelfModifiable	  on
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  off
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "Embedded\nMATLAB Function1"
+		    Location		    [257, 457, 812, 717]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    "[0.500000, 0.500000, 0.500000, 0."
+"500000]"
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "DirectionCode"
+		    Position		    [20, 101, 40, 119]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "BlobCount"
+		    Position		    [20, 136, 40, 154]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    " Demux "
+		    Ports		    [1, 1]
+		    Position		    [270, 100, 320, 140]
+		    Outputs		    "1"
+		    }
+		    Block {
+		    BlockType		    "S-Function"
+		    Name		    " SFunction "
+		    Tag			    "Stateflow S-Function object_track"
+"er_without_centroid 1"
+		    Ports		    [2, 1]
+		    Position		    [180, 100, 230, 160]
+		    FunctionName	    "sf_sfun"
+		    PortCounts		    "[2 1]"
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    " Terminator "
+		    Position		    [460, 111, 480, 129]
+		    }
+		    Line {
+		    SrcBlock		    " SFunction "
+		    SrcPort		    1
+		    Points		    [0, -10]
+		    DstBlock		    " Demux "
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    " Demux "
+		    SrcPort		    1
+		    DstBlock		    " Terminator "
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "DirectionCode"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "BlobCount"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    2
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Embedded\nMATLAB Function2"
+		  Ports			  [3, 1]
+		  Position		  [155, 56, 355, 114]
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskHideContents	  off
+		  MaskType		  "Stateflow"
+		  MaskDescription	  "Embedded MATLAB block"
+		  MaskDisplay		  "disp('DirectionTest');"
+		  MaskSelfModifiable	  on
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  off
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "Embedded\nMATLAB Function2"
+		    Location		    [257, 457, 812, 717]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    "[0.500000, 0.500000, 0.500000, 0."
+"500000]"
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "CentroidCol"
+		    Position		    [20, 101, 40, 119]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "StartCoords"
+		    Position		    [20, 136, 40, 154]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "BlobCount"
+		    Position		    [20, 171, 40, 189]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    " Demux "
+		    Ports		    [1, 1]
+		    Position		    [270, 180, 320, 220]
+		    Outputs		    "1"
+		    }
+		    Block {
+		    BlockType		    "S-Function"
+		    Name		    " SFunction "
+		    Tag			    "Stateflow S-Function object_track"
+"er_without_centroid 3"
+		    Ports		    [3, 2]
+		    Position		    [180, 100, 230, 180]
+		    FunctionName	    "sf_sfun"
+		    PortCounts		    "[3 2]"
+		    Port {
+		    PortNumber		    2
+		    Name		    "DirectionCode"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    " Terminator "
+		    Position		    [460, 191, 480, 209]
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "DirectionCode"
+		    Position		    [460, 101, 480, 119]
+		    IconDisplay		    "Port number"
+		    BusOutputAsStruct	    off
+		    }
+		    Line {
+		    SrcBlock		    "CentroidCol"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    " Demux "
+		    SrcPort		    1
+		    DstBlock		    " Terminator "
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    " SFunction "
+		    SrcPort		    1
+		    Points		    [0, 80]
+		    DstBlock		    " Demux "
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "StartCoords"
+		    SrcPort		    1
+		    Points		    [120, 0]
+		    DstBlock		    " SFunction "
+		    DstPort		    2
+		    }
+		    Line {
+		    Name		    "DirectionCode"
+		    Labels		    [0, 0]
+		    SrcBlock		    " SFunction "
+		    SrcPort		    2
+		    DstBlock		    "DirectionCode"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "BlobCount"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    3
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Insert Text1"
+		  Ports			  [3, 3]
+		  Position		  [220, 184, 305, 246]
+		  SourceBlock		  "viptextngfix/Insert Text"
+		  SourceType		  "Insert Text"
+		  inputType		  "RGB"
+		  theText		  "'STRAIGHT'"
+		  fontFace		  "Arial"
+		  dummyVar1		  "0"
+		  blockFontSize		  "12"
+		  antiAliased		  on
+		  getTextLocFrom	  "Specify via dialog"
+		  textLoc		  "[0 100]"
+		  getTextColorFrom	  "Specify via dialog"
+		  textColor		  "[1 1 1]"
+		  getTextIntensityFrom	  "Specify via dialog"
+		  textIntensity		  "1"
+		  getTextOpacityFrom	  "Specify via dialog"
+		  textOpacity		  "1.0"
+		  dummyVar2		  "0"
+		  dummyVar3		  "0"
+		  dummyVar4		  "0"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Insert Text2"
+		  Ports			  [3, 3]
+		  Position		  [225, 270, 290, 330]
+		  SourceBlock		  "viptextngfix/Insert Text"
+		  SourceType		  "Insert Text"
+		  inputType		  "RGB"
+		  theText		  "'LEFT'"
+		  fontFace		  "Arial"
+		  dummyVar1		  "0"
+		  blockFontSize		  "12"
+		  antiAliased		  on
+		  getTextLocFrom	  "Specify via dialog"
+		  textLoc		  "[0 100]"
+		  getTextColorFrom	  "Specify via dialog"
+		  textColor		  "[1 1 1]"
+		  getTextIntensityFrom	  "Specify via dialog"
+		  textIntensity		  "1"
+		  getTextOpacityFrom	  "Specify via dialog"
+		  textOpacity		  "1.0"
+		  dummyVar2		  "0"
+		  dummyVar3		  "0"
+		  dummyVar4		  "0"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Insert Text3"
+		  Ports			  [3, 3]
+		  Position		  [225, 366, 290, 434]
+		  SourceBlock		  "viptextngfix/Insert Text"
+		  SourceType		  "Insert Text"
+		  inputType		  "RGB"
+		  theText		  "'RIGHT'"
+		  fontFace		  "Arial"
+		  dummyVar1		  "0"
+		  blockFontSize		  "12"
+		  antiAliased		  on
+		  getTextLocFrom	  "Specify via dialog"
+		  textLoc		  "[0 100]"
+		  getTextColorFrom	  "Specify via dialog"
+		  textColor		  "[1 1 1]"
+		  getTextIntensityFrom	  "Specify via dialog"
+		  textIntensity		  "1"
+		  getTextOpacityFrom	  "Specify via dialog"
+		  textOpacity		  "1.0"
+		  dummyVar2		  "0"
+		  dummyVar3		  "0"
+		  dummyVar4		  "0"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Insert Text4"
+		  Ports			  [3, 3]
+		  Position		  [225, 461, 290, 529]
+		  SourceBlock		  "viptextngfix/Insert Text"
+		  SourceType		  "Insert Text"
+		  inputType		  "RGB"
+		  theText		  "'STOP'"
+		  fontFace		  "Arial"
+		  dummyVar1		  "0"
+		  blockFontSize		  "12"
+		  antiAliased		  on
+		  getTextLocFrom	  "Specify via dialog"
+		  textLoc		  "[0 100]"
+		  getTextColorFrom	  "Specify via dialog"
+		  textColor		  "[1 1 1]"
+		  getTextIntensityFrom	  "Specify via dialog"
+		  textIntensity		  "1"
+		  getTextOpacityFrom	  "Specify via dialog"
+		  textOpacity		  "1.0"
+		  dummyVar2		  "0"
+		  dummyVar3		  "0"
+		  dummyVar4		  "0"
+		}
+		Block {
+		  BlockType		  MultiPortSwitch
+		  Name			  "Multiport\nSwitch"
+		  Ports			  [5, 1]
+		  Position		  [560, 63, 630, 147]
+		  InputSameDT		  off
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "R"
+		  Position		  [770, 73, 800, 87]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "G"
+		  Position		  [770, 98, 800, 112]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "B"
+		  Position		  [770, 123, 800, 137]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  Name			  "<signal1>"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Bus\nSelector1"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "R"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "<signal2>"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Bus\nSelector1"
+		  SrcPort		  2
+		  Points		  [0, 0]
+		  DstBlock		  "G"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "<signal3>"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Bus\nSelector1"
+		  SrcPort		  3
+		  Points		  [0, 0]
+		  DstBlock		  "B"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Bus\nCreator1"
+		  SrcPort		  1
+		  Points		  [95, 0; 0, -195]
+		  DstBlock		  "Multiport\nSwitch"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Bus\nCreator2"
+		  SrcPort		  1
+		  Points		  [140, 0; 0, -280]
+		  DstBlock		  "Multiport\nSwitch"
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "Red"
+		  SrcPort		  1
+		  Points		  [0, 0; 50, 0]
+		  Branch {
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Insert Text2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -85]
+		    DstBlock		    "Insert Text1"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    Points		    [0, 100; 50, 0]
+		    Branch {
+		    DstBlock		    "Insert Text3"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 95]
+		    DstBlock		    "Insert Text4"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "Green"
+		  SrcPort		  1
+		  Points		  [0, 0; 30, 0]
+		  Branch {
+		    Points		    [25, 0; 0, -10; 35, 0]
+		    Branch {
+		    DstBlock		    "Insert Text2"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -85]
+		    DstBlock		    "Insert Text1"
+		    DstPort		    2
+		    }
+		  }
+		  Branch {
+		    Points		    [0, 90; 50, 0]
+		    Branch {
+		    DstBlock		    "Insert Text3"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 95]
+		    DstBlock		    "Insert Text4"
+		    DstPort		    2
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "Blue"
+		  SrcPort		  1
+		  Points		  [0, 0; 15, 0]
+		  Branch {
+		    Points		    [75, 0; 0, -25; 30, 0]
+		    Branch {
+		    DstBlock		    "Insert Text2"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Points		    [0, -85]
+		    DstBlock		    "Insert Text1"
+		    DstPort		    3
+		    }
+		  }
+		  Branch {
+		    Points		    [0, 75; 40, 0]
+		    Branch {
+		    DstBlock		    "Insert Text3"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Points		    [0, 95]
+		    DstBlock		    "Insert Text4"
+		    DstPort		    3
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "Insert Text2"
+		  SrcPort		  1
+		  DstBlock		  "Bus\nCreator1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Insert Text2"
+		  SrcPort		  2
+		  DstBlock		  "Bus\nCreator1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Insert Text2"
+		  SrcPort		  3
+		  DstBlock		  "Bus\nCreator1"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Insert Text3"
+		  SrcPort		  1
+		  DstBlock		  "Bus\nCreator2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Insert Text3"
+		  SrcPort		  2
+		  DstBlock		  "Bus\nCreator2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Insert Text3"
+		  SrcPort		  3
+		  DstBlock		  "Bus\nCreator2"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Multiport\nSwitch"
+		  SrcPort		  1
+		  DstBlock		  "Bus\nSelector1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Insert Text1"
+		  SrcPort		  1
+		  DstBlock		  "Bus\nCreator3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Insert Text1"
+		  SrcPort		  2
+		  DstBlock		  "Bus\nCreator3"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Insert Text1"
+		  SrcPort		  3
+		  DstBlock		  "Bus\nCreator3"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Bus\nCreator3"
+		  SrcPort		  1
+		  Points		  [25, 0; 0, -125]
+		  DstBlock		  "Multiport\nSwitch"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "CentroidCol"
+		  SrcPort		  1
+		  Points		  [70, 0]
+		  DstBlock		  "Embedded\nMATLAB Function2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "StartCoords"
+		  SrcPort		  1
+		  Points		  [70, 0]
+		  DstBlock		  "Embedded\nMATLAB Function2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Embedded\nMATLAB Function2"
+		  SrcPort		  1
+		  Points		  [85, 0; 0, 100; 35, 0]
+		  Branch {
+		    Points		    [50, 0; 0, -110]
+		    DstBlock		    "Multiport\nSwitch"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 140]
+		    DstBlock		    "Embedded\nMATLAB Function1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "BlobCount"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    Points		    [430, 0]
+		    DstBlock		    "Embedded\nMATLAB Function1"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, -430]
+		    DstBlock		    "Embedded\nMATLAB Function2"
+		    DstPort		    3
+		  }
+		}
+		Line {
+		  SrcBlock		  "Insert Text4"
+		  SrcPort		  1
+		  DstBlock		  "Bus\nCreator4"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Insert Text4"
+		  SrcPort		  2
+		  DstBlock		  "Bus\nCreator4"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Insert Text4"
+		  SrcPort		  3
+		  DstBlock		  "Bus\nCreator4"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Bus\nCreator4"
+		  SrcPort		  1
+		  Points		  [115, 0; 0, -360]
+		  DstBlock		  "Multiport\nSwitch"
+		  DstPort		  5
+		}
+		Annotation {
+		  Name			  "Navigation Logic"
+		  Position		  [396, 36]
+		  UseDisplayTextAsClickCallback	off
+		  FontName		  "Arial"
+		  FontSize		  16
+		  FontWeight		  "bold"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Set black background\nfor text overlay"
+	      Ports		      [1, 1]
+	      Position		      [360, 82, 410, 108]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      SourceBlock	      "dspmtrx3/Overwrite Values"
+	      SourceType	      "Overwrite Values"
+	      OverWriteDiag	      "Submatrix"
+	      valFrom2ndIP	      "Specify via dialog"
+	      ConstValue	      "0"
+	      RowSpan		      "Range of rows"
+	      RowStartMode	      "First"
+	      RowStartIndex	      "25"
+	      RowEndMode	      "Index"
+	      RowEndIndex	      "15"
+	      ColSpan		      "Range of columns"
+	      ColStartMode	      "First"
+	      ColStartIndex	      "1"
+	      ColEndMode	      "Index"
+	      ColEndIndex	      "30"
+	      DiagSpan		      "Range of elements"
+	      DiagStartMode	      "Index"
+	      DiagStartIndex	      "2"
+	      DiagEndMode	      "Index"
+	      DiagEndIndex	      "4"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Set black background\nfor text overlay1"
+	      Ports		      [1, 1]
+	      Position		      [360, 112, 410, 138]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      SourceBlock	      "dspmtrx3/Overwrite Values"
+	      SourceType	      "Overwrite Values"
+	      OverWriteDiag	      "Submatrix"
+	      valFrom2ndIP	      "Specify via dialog"
+	      ConstValue	      "0"
+	      RowSpan		      "Range of rows"
+	      RowStartMode	      "First"
+	      RowStartIndex	      "25"
+	      RowEndMode	      "Index"
+	      RowEndIndex	      "15"
+	      ColSpan		      "Range of columns"
+	      ColStartMode	      "First"
+	      ColStartIndex	      "1"
+	      ColEndMode	      "Index"
+	      ColEndIndex	      "30"
+	      DiagSpan		      "Range of elements"
+	      DiagStartMode	      "Index"
+	      DiagStartIndex	      "2"
+	      DiagEndMode	      "Index"
+	      DiagEndIndex	      "4"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Set black background\nfor text overlay2"
+	      Ports		      [1, 1]
+	      Position		      [360, 147, 410, 173]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      SourceBlock	      "dspmtrx3/Overwrite Values"
+	      SourceType	      "Overwrite Values"
+	      OverWriteDiag	      "Submatrix"
+	      valFrom2ndIP	      "Specify via dialog"
+	      ConstValue	      "0"
+	      RowSpan		      "Range of rows"
+	      RowStartMode	      "First"
+	      RowStartIndex	      "25"
+	      RowEndMode	      "Index"
+	      RowEndIndex	      "15"
+	      ColSpan		      "Range of columns"
+	      ColStartMode	      "First"
+	      ColStartIndex	      "1"
+	      ColEndMode	      "Index"
+	      ColEndIndex	      "30"
+	      DiagSpan		      "Range of elements"
+	      DiagStartMode	      "Index"
+	      DiagStartIndex	      "2"
+	      DiagEndMode	      "Index"
+	      DiagEndIndex	      "4"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Video Out"
+	      Position		      [970, 283, 1000, 297]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Bus\nCreator"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Video Out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Draw Shapes"
+	      SrcPort		      3
+	      Points		      [0, 5]
+	      DstBlock		      "Draw white line2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Draw Shapes"
+	      SrcPort		      2
+	      Points		      [0, 0]
+	      DstBlock		      "Draw white line1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Draw white line2"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Set black background\nfor text overlay2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Draw white line1"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Set black background\nfor text overlay1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<signal3>"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      3
+	      Points		      [0, 0]
+	      DstBlock		      "Draw Shapes"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<signal2>"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      2
+	      Points		      [0, 0]
+	      DstBlock		      "Draw Shapes"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "<signal1>"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Draw Shapes"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Video In"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Bus\nSelector"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "BBox"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Draw Shapes"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Draw Shapes"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Draw white line"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Draw white line"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Set black background\nfor text overlay"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Centroid"
+	      SrcPort		      1
+	      Points		      [0, 0; 30, 0]
+	      Branch {
+		Points			[335, 0; 0, -80]
+		DstBlock		"Draw Markers"
+		DstPort			4
+	      }
+	      Branch {
+		Points			[0, 40]
+		DstBlock		"Embedded\nMATLAB Function"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Set black background\nfor text overlay"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      DstBlock		      "Draw Markers"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Set black background\nfor text overlay1"
+	      SrcPort		      1
+	      DstBlock		      "Draw Markers"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Set black background\nfor text overlay2"
+	      SrcPort		      1
+	      Points		      [0, -20]
+	      DstBlock		      "Draw Markers"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Draw Markers"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Draw vector"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Draw Markers"
+	      SrcPort		      2
+	      Points		      [40, 0]
+	      DstBlock		      "Draw vector"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Draw Markers"
+	      SrcPort		      3
+	      Points		      [40, 0]
+	      DstBlock		      "Draw vector"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Draw vector"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Insert Text1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Draw vector"
+	      SrcPort		      2
+	      Points		      [0, 0]
+	      DstBlock		      "Insert Text1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Draw vector"
+	      SrcPort		      3
+	      Points		      [0, 0]
+	      DstBlock		      "Insert Text1"
+	      DstPort		      3
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "Insert Text1"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, 255]
+	      DstBlock		      "NavigationLogic"
+	      DstPort		      1
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "Insert Text1"
+	      SrcPort		      2
+	      Points		      [35, 0; 0, 250]
+	      DstBlock		      "NavigationLogic"
+	      DstPort		      2
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "Insert Text1"
+	      SrcPort		      3
+	      Points		      [20, 0; 0, 245]
+	      DstBlock		      "NavigationLogic"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      2
+	      Points		      [25, 0; 0, -55; 215, 0]
+	      DstBlock		      "Draw vector"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "EOF"
+	      SrcPort		      1
+	      Points		      [0, 20]
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "StartCoords"
+	      SrcPort		      1
+	      Points		      [0, 0; 55, 0]
+	      Branch {
+		DstBlock		"Embedded\nMATLAB Function"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, 225; 590, 0; 0, -80]
+		DstBlock		"NavigationLogic"
+		DstPort			5
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "VidSize"
+	      SrcPort		      1
+	      Points		      [80, 0; 0, -20]
+	      DstBlock		      "Embedded\nMATLAB Function"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      3
+	      Points		      [355, 0; 0, 105]
+	      DstBlock		      "NavigationLogic"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Embedded\nMATLAB Function"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -70; 330, 0; 0, -25]
+	      DstBlock		      "Insert Text1"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "R"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Insert Text"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, 5]
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "G"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Insert Text"
+	      SrcPort		      2
+	      Points		      [15, 0; 0, -5]
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "B"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Insert Text"
+	      SrcPort		      3
+	      Points		      [45, 0; 0, -15]
+	      DstBlock		      "Bus\nCreator"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Count"
+	      SrcPort		      1
+	      Points		      [385, 0; 0, 125; 20, 0]
+	      Branch {
+		DstBlock		"Insert Text"
+		DstPort			4
+	      }
+	      Branch {
+		Points			[0, 195; 230, 0]
+		DstBlock		"NavigationLogic"
+		DstPort			6
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "NavigationLogic"
+	      SrcPort		      1
+	      Points		      [-5, 0; 0, -120]
+	      DstBlock		      "Insert Text"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "NavigationLogic"
+	      SrcPort		      2
+	      Points		      [-15, 0; 0, -145]
+	      DstBlock		      "Insert Text"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "NavigationLogic"
+	      SrcPort		      3
+	      Points		      [-25, 0; 0, -170]
+	      DstBlock		      "Insert Text"
+	      DstPort		      3
+	    }
+	    Annotation {
+	      Name		      "Black background\nfor count"
+	      Position		      [384, 65]
+	      UseDisplayTextAsClickCallback off
+	    }
+	    Annotation {
+	      Name		      "Create white\nline"
+	      Position		      [302, 65]
+	      UseDisplayTextAsClickCallback off
+	    }
+	    Annotation {
+	      Name		      "Display Bounding Boxes"
+	      Position		      [486, 16]
+	      UseDisplayTextAsClickCallback off
+	      FontName		      "Arial"
+	      FontSize		      16
+	      FontWeight	      "bold"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Equalized Original"
+	  Ports			  [1]
+	  Position		  [500, 461, 585, 529]
+	  SourceBlock		  "vipsnks/To Video Display"
+	  SourceType		  "To Video Display"
+	  inputType		  "Intensity"
+	  OutputDevice		  "On-screen video monitor"
+	  fullScreen		  off
+	  videoWindowX		  "172"
+	  videoWindowY		  "305"
+	  saveWindowSize	  off
+	  videoWindowWidth	  "112"
+	  videoWindowHeight	  "28"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Results"
+	  Ports			  [3]
+	  Position		  [495, 206, 580, 274]
+	  SourceBlock		  "vipsnks/To Video Display"
+	  SourceType		  "To Video Display"
+	  inputType		  "RGB"
+	  OutputDevice		  "On-screen video monitor"
+	  fullScreen		  off
+	  videoWindowX		  "172"
+	  videoWindowY		  "89"
+	  saveWindowSize	  off
+	  videoWindowWidth	  "264"
+	  videoWindowHeight	  "219"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Threshold"
+	  Ports			  [1]
+	  Position		  [495, 61, 580, 129]
+	  SourceBlock		  "vipsnks/To Video Display"
+	  SourceType		  "To Video Display"
+	  inputType		  "Intensity"
+	  OutputDevice		  "On-screen video monitor"
+	  fullScreen		  off
+	  videoWindowX		  "432"
+	  videoWindowY		  "89"
+	  saveWindowSize	  off
+	  videoWindowWidth	  "264"
+	  videoWindowHeight	  "219"
+	}
+	Line {
+	  Name			  "<R>"
+	  FontSize		  12
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  1
+	  DstBlock		  "Results"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<G>"
+	  FontSize		  12
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  2
+	  DstBlock		  "Results"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<B>"
+	  FontSize		  12
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  3
+	  DstBlock		  "Results"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Th. Img"
+	  SrcPort		  1
+	  DstBlock		  "Threshold"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [1, 0]
+	  SrcBlock		  "Count"
+	  SrcPort		  1
+	  DstBlock		  "Display bounding boxes"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [2, 0]
+	  SrcBlock		  "BBox"
+	  SrcPort		  1
+	  Points		  [80, 0; 0, -25]
+	  DstBlock		  "Display bounding boxes"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Centroid"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -45; 100, 0; 0, -30]
+	  DstBlock		  "Display bounding boxes"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Display bounding boxes"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nSelector"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Video In"
+	  SrcPort		  1
+	  Points		  [95, 0; 0, -50]
+	  DstBlock		  "Display bounding boxes"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "EOF"
+	  SrcPort		  1
+	  Points		  [110, 0; 0, -95]
+	  DstBlock		  "Display bounding boxes"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "StartCoords"
+	  SrcPort		  1
+	  Points		  [100, 0; 0, -115]
+	  DstBlock		  "Display bounding boxes"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "VidSize"
+	  SrcPort		  1
+	  Points		  [75, 0; 0, -115]
+	  DstBlock		  "Display bounding boxes"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "VidOriginal"
+	  SrcPort		  1
+	  DstBlock		  "Equalized Original"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "Display Results"
+	  Position		  [316, 41]
+	  UseDisplayTextAsClickCallback	off
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Edge Detection"
+      Ports		      [1, 1]
+      Position		      [440, 430, 540, 490]
+      DialogController	      "vipDDGCreate"
+      DialogControllerArgs    "DataTag2"
+      SourceBlock	      "vipanalysis/Edge Detection"
+      SourceType	      "Edge Detection"
+      method		      "Prewitt"
+      outputType	      "Binary image"
+      userDefinedThreshold    on
+      thresholdSource	      "Specify via dialog"
+      threshold		      "0.12"
+      thresholdTuning	      "10"
+      edgeThinning	      off
+      threshold_canny	      "[0.25 0.60]"
+      autoPercent	      "70"
+      sigma		      "3"
+      outputMode	      "Same as first input"
+      outputWordLength	      "16"
+      outputFracLength	      "4"
+      accumMode		      "Same as product output"
+      accumWordLength	      "32"
+      accumFracLength	      "8"
+      prodOutputMode	      "Same as first input"
+      prodOutputWordLength    "32"
+      prodOutputFracLength    "8"
+      roundingMode	      "Floor"
+      overflowMode	      off
+      LockScale		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Edges"
+      Ports		      [1]
+      Position		      [895, 441, 980, 509]
+      SourceBlock	      "vipsnks/To Video Display"
+      SourceType	      "To Video Display"
+      inputType		      "Intensity"
+      OutputDevice	      "On-screen video monitor"
+      fullScreen	      off
+      videoWindowX	      "692"
+      videoWindowY	      "89"
+      saveWindowSize	      off
+      videoWindowWidth	      "264"
+      videoWindowHeight	      "219"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Frame Rate\nDisplay"
+      Ports		      [1]
+      Position		      [295, 399, 350, 431]
+      DialogController	      "vipDDGCreate"
+      DialogControllerArgs    "DataTag3"
+      SourceBlock	      "vipsnks/Frame Rate\nDisplay"
+      SourceType	      "Frame Rate Display"
+      UpdateRate	      "10"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "From Multimedia File"
+      Ports		      [0, 3]
+      Position		      [15, 127, 120, 173]
+      DialogController	      "dspDDGCreate"
+      DialogControllerArgs    "DataTag4"
+      FontSize		      10
+      SourceBlock	      "dspwin32/From Multimedia File"
+      SourceType	      "From Multimedia File"
+      inputFilename	      "D:\\FYP\\videos\\test-video.mpg"
+      loop		      on
+      numPlays		      "inf"
+      outputStreams	      "Video only"
+      videoDataType	      "single"
+      audioDataType	      "int16"
+      inheritSampleTime	      on
+      userDefinedSampleTime   "1/30"
+      noAudioOutput	      off
+      isIntensityVideo	      off
+      outputEOF		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Histogram\nEqualization"
+      Ports		      [1, 1]
+      Position		      [420, 67, 505, 123]
+      SourceBlock	      "vipanalysis/Histogram\nEqualization"
+      SourceType	      "Histogram Equalization"
+      specify		      "Uniform"
+      numbins		      "256"
+      src		      "Specify via dialog"
+      hist		      "ones(1,64)"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Image Data Type\nConversion"
+      Ports		      [1, 1]
+      Position		      [845, 342, 930, 378]
+      SourceBlock	      "vipconversions/Image Data Type\nConversion"
+      SourceType	      "Image Data Type Conversion"
+      outDT		      "double"
+      isSigned		      on
+      wordLen		      "16"
+      numFracBits	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Image Data Type\nConversion1"
+      Ports		      [1, 1]
+      Position		      [560, 442, 645, 478]
+      SourceBlock	      "vipconversions/Image Data Type\nConversion"
+      SourceType	      "Image Data Type Conversion"
+      outDT		      "single"
+      isSigned		      on
+      wordLen		      "16"
+      numFracBits	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Optical Flow1"
+      Ports		      [1, 1]
+      Position		      [535, 98, 650, 182]
+      ShowName		      off
+      SourceBlock	      "vipanalysis/Optical Flow"
+      SourceType	      "Optical Flow"
+      ShowPortLabels	      on
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      method		      "Lucas-Kanade"
+      which2img		      "Current frame and N-th frame back"
+      N			      "1"
+      outVelForm	      "Magnitude-squared"
+      lambda		      "1"
+      stop_criteria	      "When maximum number of iterations is reached"
+      maxAllowAbsDiff	      "eps"
+      maxIter		      "10"
+      eigTh		      "0.01"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Resize"
+      Ports		      [1, 1]
+      Position		      [165, 85, 230, 125]
+      DialogController	      "vipDDGCreate"
+      DialogControllerArgs    "DataTag5"
+      SourceBlock	      "vipgeotforms/Resize"
+      SourceType	      "Resize"
+      specify		      "Number of output rows and columns"
+      rfactor		      "[200 150]"
+      outCols		      "200"
+      outRows		      "300"
+      outRowsCols	      "[192 256]"
+      interp_method	      "Bilinear"
+      antialias		      on
+      firstCoeffMode	      "Same word length as input"
+      firstCoeffWordLength    "32"
+      firstCoeffFracLength    "31"
+      outputMode	      "Same as input"
+      outputWordLength	      "32"
+      outputFracLength	      "10"
+      accumMode		      "Same as product output"
+      accumWordLength	      "32"
+      accumFracLength	      "10"
+      prodOutputMode	      "Binary point scaling"
+      prodOutputWordLength    "32"
+      prodOutputFracLength    "10"
+      roundingMode	      "Nearest"
+      overflowMode	      on
+      LockScale		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Resize1"
+      Ports		      [1, 1]
+      Position		      [160, 145, 225, 185]
+      DialogController	      "vipDDGCreate"
+      DialogControllerArgs    "DataTag6"
+      SourceBlock	      "vipgeotforms/Resize"
+      SourceType	      "Resize"
+      specify		      "Number of output rows and columns"
+      rfactor		      "[200 150]"
+      outCols		      "[300 250]"
+      outRows		      "300"
+      outRowsCols	      "[192 256]"
+      interp_method	      "Nearest neighbor"
+      antialias		      on
+      firstCoeffMode	      "Same word length as input"
+      firstCoeffWordLength    "32"
+      firstCoeffFracLength    "31"
+      outputMode	      "Same as input"
+      outputWordLength	      "32"
+      outputFracLength	      "10"
+      accumMode		      "Same as product output"
+      accumWordLength	      "32"
+      accumFracLength	      "10"
+      prodOutputMode	      "Binary point scaling"
+      prodOutputWordLength    "32"
+      prodOutputFracLength    "10"
+      roundingMode	      "Nearest"
+      overflowMode	      on
+      LockScale		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Resize2"
+      Ports		      [1, 1]
+      Position		      [165, 210, 230, 250]
+      DialogController	      "vipDDGCreate"
+      DialogControllerArgs    "DataTag7"
+      SourceBlock	      "vipgeotforms/Resize"
+      SourceType	      "Resize"
+      specify		      "Number of output rows and columns"
+      rfactor		      "[200 150]"
+      outCols		      "200"
+      outRows		      "300"
+      outRowsCols	      "[192 256]"
+      interp_method	      "Nearest neighbor"
+      antialias		      on
+      firstCoeffMode	      "Same word length as input"
+      firstCoeffWordLength    "32"
+      firstCoeffFracLength    "31"
+      outputMode	      "Same as input"
+      outputWordLength	      "32"
+      outputFracLength	      "10"
+      accumMode		      "Same as product output"
+      accumWordLength	      "32"
+      accumFracLength	      "10"
+      prodOutputMode	      "Binary point scaling"
+      prodOutputWordLength    "32"
+      prodOutputFracLength    "10"
+      roundingMode	      "Nearest"
+      overflowMode	      on
+      LockScale		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "StartCoords"
+      Position		      [40, 290, 70, 320]
+      Value		      "[96; 128]"
+      VectorParams1D	      on
+      SamplingMode	      "Frame based"
+      OutDataTypeMode	      "double"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Thresholding and\nRegion Filtering"
+      Ports		      [1, 4]
+      Position		      [680, 70, 755, 205]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      System {
+	Name			"Thresholding and\nRegion Filtering"
+	Location		[262, 353, 1002, 692]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"125"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Sq. Mag"
+	  Position		  [75, 73, 105, 87]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Compare\nTo Constant"
+	  Ports			  [1, 1]
+	  Position		  [165, 65, 235, 95]
+	  ShowName		  off
+	  FontSize		  12
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare"
+"\nTo Constant"
+	  SourceType		  "Compare To Constant"
+	  ShowPortLabels	  on
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  relop			  ">="
+	  const			  "0.02"
+	  LogicOutDataTypeMode	  "boolean"
+	  ZeroCross		  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Region Filtering"
+	  Ports			  [1, 4]
+	  Position		  [295, 113, 420, 227]
+	  FontSize		  12
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Region Filtering"
+	    Location		    [176, 116, 970, 518]
+	    Open		    on
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "BW"
+	      Position		      [45, 198, 75, 212]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Blob Analysis"
+	      Ports		      [1, 3]
+	      Position		      [105, 180, 215, 230]
+	      ShowName		      off
+	      DialogController	      "vipDDGCreate"
+	      DialogControllerArgs    "DataTag8"
+	      SourceBlock	      "vipstatistics/Blob Analysis"
+	      SourceType	      "Blob Analysis"
+	      area		      off
+	      centroid		      on
+	      bBox		      on
+	      majorAxis		      off
+	      minorAxis		      off
+	      angle		      off
+	      eccentricity	      off
+	      equivDiameterSq	      off
+	      extent		      off
+	      perimeter		      off
+	      maxBlobs		      "10"
+	      warnIfNumBlobsExceeded  on
+	      isCount		      on
+	      useMinArea	      on
+	      minArea		      "100"
+	      useMaxArea	      on
+	      maxArea		      "2500"
+	      excludeBorderBlob	      off
+	      outDT		      "single"
+	      isFill		      on
+	      fillValues	      "-1"
+	      conn		      "8"
+	      isLabel		      off
+	      outputMode	      "Binary point scaling"
+	      outputWordLength	      "32"
+	      outputFracLength	      "16"
+	      memoryMode	      "Same as product output"
+	      memoryWordLength	      "32"
+	      memoryFracLength	      "16"
+	      firstCoeffMode	      "Binary point scaling"
+	      firstCoeffWordLength    "16"
+	      firstCoeffFracLength    "14"
+	      secondCoeffMode	      "Binary point scaling"
+	      secondCoeffWordLength   "32"
+	      secondCoeffFracLength   "16"
+	      accumMode		      "Binary point scaling"
+	      accumWordLength	      "32"
+	      accumFracLength	      "0"
+	      prodOutputMode	      "Binary point scaling"
+	      prodOutputWordLength    "32"
+	      prodOutputFracLength    "16"
+	      roundingMode	      "Floor"
+	      overflowMode	      off
+	      LockScale		      off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "CentroidCalc"
+	      Ports		      [1, 1]
+	      Position		      [700, 306, 810, 374]
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      System {
+		Name			"CentroidCalc"
+		Location		[2, 70, 1022, 720]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"110"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 108, 55, 122]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Add"
+		  Ports			  [2, 1]
+		  Position		  [495, 142, 525, 173]
+		  InputSameDT		  off
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  OutScaling		  "2^-10"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Add1"
+		  Ports			  [2, 1]
+		  Position		  [495, 217, 525, 248]
+		  InputSameDT		  off
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  OutScaling		  "2^-10"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  Position		  [265, 275, 295, 305]
+		  Value			  "2"
+		  VectorParams1D	  on
+		  SamplingMode		  "Sample based"
+		  OutDataTypeMode	  "Inherit from 'Constant value'"
+		  OutDataType		  "sfix(16)"
+		  ConRadixGroup		  "Use specified scaling"
+		  OutScaling		  "2^0"
+		  SampleTime		  "inf"
+		  FramePeriod		  "inf"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Divide"
+		  Ports			  [2, 1]
+		  Position		  [385, 196, 415, 229]
+		  Inputs		  "*/"
+		  InputSameDT		  off
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  OutScaling		  "2^-10"
+		  RndMeth		  "Floor"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Divide1"
+		  Ports			  [2, 1]
+		  Position		  [390, 297, 420, 328]
+		  Inputs		  "*/"
+		  InputSameDT		  off
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  OutScaling		  "2^-10"
+		  RndMeth		  "Floor"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Concatenate
+		  Name			  "Matrix\nConcatenate1"
+		  Ports			  [2, 1]
+		  Position		  [585, 174, 640, 216]
+		  Mode			  "Vertical matrix concatenation"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Submatrix"
+		  Ports			  [1, 1]
+		  Position		  [175, 95, 225, 135]
+		  SourceBlock		  "dspmtrx3/Submatrix"
+		  SourceType		  "Submatrix"
+		  RowSpan		  "One row"
+		  RowStartMode		  "Index"
+		  RowStartIndex		  "1"
+		  RowEndMode		  "Last"
+		  RowEndIndex		  "1"
+		  ColSpan		  "All columns"
+		  ColStartMode		  "Offset from last"
+		  ColStartIndex		  "1"
+		  ColEndMode		  "Last"
+		  ColEndIndex		  "1"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Submatrix1"
+		  Ports			  [1, 1]
+		  Position		  [175, 170, 225, 210]
+		  SourceBlock		  "dspmtrx3/Submatrix"
+		  SourceType		  "Submatrix"
+		  RowSpan		  "One row"
+		  RowStartMode		  "Index"
+		  RowStartIndex		  "2"
+		  RowEndMode		  "Last"
+		  RowEndIndex		  "1"
+		  ColSpan		  "All columns"
+		  ColStartMode		  "Offset from last"
+		  ColStartIndex		  "1"
+		  ColEndMode		  "Last"
+		  ColEndIndex		  "1"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Submatrix2"
+		  Ports			  [1, 1]
+		  Position		  [175, 245, 225, 285]
+		  SourceBlock		  "dspmtrx3/Submatrix"
+		  SourceType		  "Submatrix"
+		  RowSpan		  "One row"
+		  RowStartMode		  "Index"
+		  RowStartIndex		  "3"
+		  RowEndMode		  "Last"
+		  RowEndIndex		  "1"
+		  ColSpan		  "All columns"
+		  ColStartMode		  "Offset from last"
+		  ColStartIndex		  "1"
+		  ColEndMode		  "Last"
+		  ColEndIndex		  "1"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Submatrix3"
+		  Ports			  [1, 1]
+		  Position		  [175, 315, 225, 355]
+		  SourceBlock		  "dspmtrx3/Submatrix"
+		  SourceType		  "Submatrix"
+		  RowSpan		  "One row"
+		  RowStartMode		  "Index"
+		  RowStartIndex		  "4"
+		  RowEndMode		  "Last"
+		  RowEndIndex		  "1"
+		  ColSpan		  "All columns"
+		  ColStartMode		  "Offset from last"
+		  ColStartIndex		  "1"
+		  ColEndMode		  "Last"
+		  ColEndIndex		  "1"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [820, 188, 850, 202]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Add1"
+		  SrcPort		  1
+		  Points		  [15, 0; 0, -30]
+		  DstBlock		  "Matrix\nConcatenate1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Add"
+		  SrcPort		  1
+		  Points		  [10, 0; 0, 25]
+		  DstBlock		  "Matrix\nConcatenate1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Divide1"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -75]
+		  DstBlock		  "Add1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Submatrix1"
+		  SrcPort		  1
+		  Points		  [250, 0]
+		  DstBlock		  "Add1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Divide"
+		  SrcPort		  1
+		  Points		  [25, 0; 0, -50]
+		  DstBlock		  "Add"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Submatrix"
+		  SrcPort		  1
+		  Points		  [250, 0]
+		  DstBlock		  "Add"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Submatrix3"
+		  SrcPort		  1
+		  Points		  [130, 0; 0, -30]
+		  DstBlock		  "Divide1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Submatrix2"
+		  SrcPort		  1
+		  Points		  [125, 0; 0, -60]
+		  DstBlock		  "Divide"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [30, 0; 0, -45]
+		  Branch {
+		    Points		    [0, -25]
+		    DstBlock		    "Divide"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, 75]
+		    DstBlock		    "Divide1"
+		    DstPort		    2
+		  }
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  Points		  [0, 0; 15, 0]
+		  Branch {
+		    Points		    [30, 0]
+		    Branch {
+		    Points		    [25, 0]
+		    Branch {
+		    DstBlock		    "Submatrix"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 75]
+		    DstBlock		    "Submatrix1"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    Points		    [0, 150]
+		    DstBlock		    "Submatrix2"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    Points		    [0, 220]
+		    DstBlock		    "Submatrix3"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Matrix\nConcatenate1"
+		  SrcPort		  1
+		  Points		  [5, 0; 0, 5; 125, 0; 0, -5]
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Annotation {
+		  Name			  "Centroid Calculation\nSubsystem"
+		  Position		  [570, 349]
+		  UseDisplayTextAsClickCallback	off
+		  FontName		  "Arial"
+		  FontSize		  14
+		  FontWeight		  "bold"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Compare\nTo Constant4"
+	      Ports		      [1, 1]
+	      Position		      [375, 276, 430, 304]
+	      ShowName		      off
+	      SourceBlock	      "simulink/Logic and Bit\nOperations/Comp"
+"are\nTo Constant"
+	      SourceType	      "Compare To Constant"
+	      ShowPortLabels	      on
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      relop		      ">="
+	      const		      "line_row"
+	      LogicOutDataTypeMode    "boolean"
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      DataTypeConversion
+	      Name		      "Data Type \nConversion"
+	      Position		      [480, 279, 525, 301]
+	      ShowName		      off
+	      OutDataTypeMode	      "single"
+	    }
+	    Block {
+	      BlockType		      DataTypeConversion
+	      Name		      "Data Type \nConversion2"
+	      Position		      [640, 224, 670, 236]
+	      ShowName		      off
+	      OutDataTypeMode	      "int32"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Merge Box"
+	      Ports		      [2, 2]
+	      Position		      [695, 199, 775, 241]
+	      ShowName		      off
+	      SourceBlock	      "vipmisc/Merge Box"
+	      SourceType	      "Merge Box"
+	      whichdir		      "Row direction only"
+	      cdist		      "60"
+	      rdist		      "45"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Submatrix2"
+	      Ports		      [1, 1]
+	      Position		      [295, 270, 345, 310]
+	      ShowName		      off
+	      SourceBlock	      "dspmtrx3/Submatrix"
+	      SourceType	      "Submatrix"
+	      RowSpan		      "One row"
+	      RowStartMode	      "Index"
+	      RowStartIndex	      "1"
+	      RowEndMode	      "Last"
+	      RowEndIndex	      "1"
+	      ColSpan		      "All columns"
+	      ColStartMode	      "First"
+	      ColStartIndex	      "1"
+	      ColEndMode	      "Last"
+	      ColEndIndex	      "1"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum of\nElements"
+	      Ports		      [1, 1]
+	      Position		      [565, 275, 595, 305]
+	      ShowName		      off
+	      Inputs		      "+"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutScaling	      "2^-10"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Variable\nSelector"
+	      Ports		      [2, 1]
+	      Position		      [510, 188, 605, 232]
+	      SourceBlock	      "dspindex/Variable\nSelector"
+	      SourceType	      "Variable Selector"
+	      NumInputs		      "1"
+	      rowsOrCols	      "Columns"
+	      IdxMode		      "Variable"
+	      Elements		      "[1 3]"
+	      ZerOneIdxMode	      "Zero-based"
+	      errmode		      "Clip Index"
+	      FillMode		      on
+	      FillValues	      "-1"
+	      ShowPortLabels	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Count"
+	      Position		      [830, 223, 860, 237]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Regions"
+	      Position		      [830, 203, 860, 217]
+	      NamePlacement	      "alternate"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "CentroidOld"
+	      Position		      [270, 133, 300, 147]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Centroid"
+	      Position		      [840, 333, 870, 347]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Data Type \nConversion"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Sum of\nElements"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum of\nElements"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -60]
+	      DstBlock		      "Data Type \nConversion2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Compare\nTo Constant4"
+	      SrcPort		      1
+	      Points		      [0, 0; 25, 0]
+	      Branch {
+		DstBlock		"Data Type \nConversion"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -70]
+		DstBlock		"Variable\nSelector"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Submatrix2"
+	      SrcPort		      1
+	      DstBlock		      "Compare\nTo Constant4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "BW"
+	      SrcPort		      1
+	      DstBlock		      "Blob Analysis"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Variable\nSelector"
+	      SrcPort		      1
+	      DstBlock		      "Merge Box"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Merge Box"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		DstBlock		"Regions"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 75; -115, 0]
+		DstBlock		"CentroidCalc"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Merge Box"
+	      SrcPort		      2
+	      Points		      [0, 0]
+	      DstBlock		      "Count"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Data Type \nConversion2"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Merge Box"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Blob Analysis"
+	      SrcPort		      2
+	      Points		      [30, 10]
+	      Branch {
+		DstBlock		"Submatrix2"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -15]
+		DstBlock		"Variable\nSelector"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Blob Analysis"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, -50]
+	      DstBlock		      "CentroidOld"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "CentroidCalc"
+	      SrcPort		      1
+	      DstBlock		      "Centroid"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "select cars only of specified size"
+	      Position		      [130, 132]
+	      UseDisplayTextAsClickCallback off
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Th. Img"
+	  Position		  [495, 73, 525, 87]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Count"
+	  Position		  [495, 118, 525, 132]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "BBox"
+	  Position		  [495, 148, 525, 162]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Centroid"
+	  Position		  [495, 208, 525, 222]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Compare\nTo Constant"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  Branch {
+	    DstBlock		    "Region Filtering"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Th. Img"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sq. Mag"
+	  SrcPort		  1
+	  DstBlock		  "Compare\nTo Constant"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Region Filtering"
+	  SrcPort		  1
+	  DstBlock		  "Count"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Region Filtering"
+	  SrcPort		  2
+	  DstBlock		  "BBox"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Region Filtering"
+	  SrcPort		  4
+	  DstBlock		  "Centroid"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "Thresholding and Region Filtering"
+	  Position		  [301, 36]
+	  UseDisplayTextAsClickCallback	off
+	  FontName		  "Arial"
+	  FontSize		  16
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "VidSize"
+      Position		      [40, 350, 70, 380]
+      Value		      "[192; 256]"
+      VectorParams1D	      on
+      SamplingMode	      "Frame based"
+      OutDataTypeMode	      "double"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Video Input"
+      Ports		      [0, 3]
+      Position		      [110, 439, 230, 511]
+      DialogController	      "imaqcreatedialog"
+      DialogControllerArgs    "DataTag9"
+      SourceBlock	      "imaqlib/Video Input"
+      SourceType	      "Video Input"
+      VideoDeviceMenu	      "1 (Bt878 TV Card)"
+      VideoDevice	      "1 (Bt878 TV Card)"
+      VideoStreamFormatMenu   "RGB24_768x576"
+      VideoStreamFormat	      "RGB24_768x576"
+      VideoFrameSizeMenu      "INPUTSIZE"
+      VideoFrameSize	      "INPUTSIZE"
+      FrameRate		      "30 fps"
+      DataType		      "double"
+    }
+    Line {
+      SrcBlock		      "Thresholding and\nRegion Filtering"
+      SrcPort		      3
+      Points		      [5, 0; 0, -15]
+      DstBlock		      "Display Results"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Thresholding and\nRegion Filtering"
+      SrcPort		      2
+      Points		      [25, 0; 0, -5]
+      DstBlock		      "Display Results"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Bus\nCreator"
+      SrcPort		      1
+      Points		      [305, 0; 0, -90]
+      DstBlock		      "Display Results"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Thresholding and\nRegion Filtering"
+      SrcPort		      4
+      DstBlock		      "Display Results"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "StartCoords"
+      SrcPort		      1
+      Points		      [745, 0; 0, -65]
+      DstBlock		      "Display Results"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "VidSize"
+      SrcPort		      1
+      Points		      [720, 0; 0, -100]
+      DstBlock		      "Display Results"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "Optical Flow1"
+      SrcPort		      1
+      DstBlock		      "Thresholding and\nRegion Filtering"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Thresholding and\nRegion Filtering"
+      SrcPort		      1
+      Points		      [90, 0]
+      DstBlock		      "Display Results"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Edge Detection"
+      SrcPort		      1
+      Points		      [0, 0]
+      Branch {
+	DstBlock		"Image Data Type\nConversion1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 60; 280, 0; 0, -45]
+	DstBlock		"Edges"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Image Data Type\nConversion1"
+      SrcPort		      1
+      Points		      [5, 0; 0, -115; -150, 0; 0, -205]
+      DstBlock		      "Optical Flow1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Color Space\n Conversion"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Edge Detection"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From Multimedia File"
+      SrcPort		      1
+      Points		      [30, 0; 0, -30]
+      DstBlock		      "Resize"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From Multimedia File"
+      SrcPort		      2
+      Points		      [25, 0; 0, 15]
+      DstBlock		      "Resize1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From Multimedia File"
+      SrcPort		      3
+      Points		      [0, 35; 25, 0]
+      DstBlock		      "Resize2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Resize"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	Points			[40, 0]
+	DstBlock		"Color Space\n Conversion"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 130]
+	DstBlock		"Bus\nCreator"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Resize1"
+      SrcPort		      1
+      Points		      [0, -25; 20, 0]
+      Branch {
+	Points			[50, 0]
+	DstBlock		"Color Space\n Conversion"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 115]
+	DstBlock		"Bus\nCreator"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Resize2"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	Points			[60, 0]
+	DstBlock		"Color Space\n Conversion"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 45]
+	DstBlock		"Bus\nCreator"
+	DstPort			3
+      }
+    }
+    Annotation {
+      Name		      "Object Tracking using Optical Flow (Lucas Kanad"
+"e)"
+      Position		      [476, 36]
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      16
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Position		      [543, 153]
+      UseDisplayTextAsClickCallback off
+    }
+  }
+}
+MatData {
+  NumRecords		  10
+  DataRecord {
+    Tag			    DataTag9
+    Data		    "  %)30     .    <     8    (     0         %    "
+"\"     $    !     0         .    0     8    (    !          %    \"     $    "
+"*     0         0    \"@   '9I9&5O:6YP=70        "
+  }
+  DataRecord {
+    Tag			    DataTag8
+    Data		    "  %)30     .    8     8    (     0         %    "
+"\"     $    !     0         .    ,     8    (    !          %    \"     $    "
+"$     0         0  0 0FQO8@"
+  }
+  DataRecord {
+    Tag			    DataTag7
+    Data		    "  %)30     .    :     8    (     0         %    "
+"\"     $    !     0         .    .     8    (    !          %    \"     $    "
+"(     0         0    \"    %)E<VEZ93)$"
+  }
+  DataRecord {
+    Tag			    DataTag6
+    Data		    "  %)30     .    :     8    (     0         %    "
+"\"     $    !     0         .    .     8    (    !          %    \"     $    "
+"(     0         0    \"    %)E<VEZ93)$"
+  }
+  DataRecord {
+    Tag			    DataTag5
+    Data		    "  %)30     .    :     8    (     0         %    "
+"\"     $    !     0         .    .     8    (    !          %    \"     $    "
+"(     0         0    \"    %)E<VEZ93)$"
+  }
+  DataRecord {
+    Tag			    DataTag4
+    Data		    "  %)30     .    N     8    (     0         %    "
+"\"     $    \"     0         .    0     8    (    !          %    \"     $   "
+" *     0         0    \"@   $9R;VU-349I;&4        .    0     8    (    !     "
+"     %    \"     $    )     0         0    \"0   &1S<&1I86QO9P         "
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    N     8    (     0         %    "
+"\"     $    \"     0         .    0     8    (    !          %    \"     $   "
+" 0     0         0    $    $9R86UE4F%T941I<W!L87D.    0     8    (    !      "
+"    %    \"     $    )     0         0    \"0   '9I<&1I86QO9P         "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    <     8    (     0         %    "
+"\"     $    !     0         .    0     8    (    !          %    \"     $    "
+"-     0         0    #0   $5D9V5$971E8W1I;VX    "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    N     8    (     0         %    "
+"\"     $    \"     0         .    0     8    (    !          %    \"     $   "
+" *     0         0    \"@   $1R87=3:&%P97,        .    0     8    (    !     "
+"     %    \"     $    )     0         0    \"0   '9I<&1I86QO9P         "
+  }
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    N     8    (     0         %    "
+"\"     $    \"     0         .    0     8    (    !          %    \"     $   "
+" *     0         0    \"@   $1R87=3:&%P97,        .    0     8    (    !     "
+"     %    \"     $    )     0         0    \"0   '9I<&1I86QO9P         "
+  }
+}
+
+# Finite State Machines
+#
+#    Stateflow Version 6.4 (R2006a) dated Feb  2 2006, 05:30:12
+#
+#
+
+Stateflow {
+
+	machine {
+		id                   		1
+		name                 		"object_tracker_without_centroid"
+		created              		"09-Dec-2006 02:00:58"
+		isLibrary            		0
+		firstTarget          		30
+		sfVersion            		64014000
+	}
+
+	chart {
+		id                                        		2
+		name                                      		"Display Results/Display bounding boxes/NavigationLogic/Embedded\n"
+					"MATLAB Function1"
+		windowPosition                            		[225.45 330 200.25 189.75]
+		viewLimits                                		[0 156.75 0 153.75]
+		screen                                    		[1 1 1024 768 1.333333333333333]
+		treeNode                                  		[0 3 0 0]
+		firstTransition                           		5
+		firstJunction                             		4
+		viewObj                                   		2
+		machine                                   		1
+		decomposition                             		CLUSTER_CHART
+		type                                      		EML_CHART
+		firstData                                 		6
+		chartFileNumber                           		1
+		disableImplicitCasting                    		1
+		eml {
+			name       		"Turnit"
+		}
+	}
+
+	state {
+		id                           		3
+		labelString                  		"eML_blk_kernel()"
+		position                     		[18 64.5 118 66]
+		fontSize                     		12
+		chart                        		2
+		treeNode                     		[2 0 0 0]
+		superState                   		SUBCHART
+		subviewer                    		2
+		type                         		FUNC_STATE
+		decomposition                		CLUSTER_STATE
+		eml {
+			isEML                    		1
+			script                   		"function Turnit(DirectionCode, BlobCount)\n"
+						"% This block supports an embeddable subset of the MATLAB la"
+						"nguage.\n"
+						"% See the help menu for details. \n"
+						"DIFFTHING = 5;\n"
+						"BRAKEDIFF = 2;\n"
+						"\n"
+						"persistent movecount; %no of frames after which the positio"
+						"n of the car is updated.\n"
+						"persistent brakecount;\n"
+						"\n"
+						"persistent startflag;\n"
+						"\n"
+						"if isempty ( startflag ) \n"
+						"    startflag = 1;\n"
+						"else\n"
+						"    startflag = 0;\n"
+						"end\n"
+						"\n"
+						"if isempty ( brakecount ) \n"
+						"    brakecount = 0;\n"
+						"end\n"
+						"\n"
+						"if  isempty ( movecount ) \n"
+						"    movecount = 0;\n"
+						"end\n"
+						"\n"
+						"if BlobCount == 0 \n"
+						"    movecount = DIFFTHING;\n"
+						"    brakecount = 0;\n"
+						"    startflag = 1;\n"
+						"    BrakeAll;\n"
+						"    return;\n"
+						"end\n"
+						"\n"
+						"movecount = movecount + 1;\n"
+						"brakecount = brakecount + 1;\n"
+						"\n"
+						"if ( brakecount >= BRAKEDIFF )\n"
+						"    BrakeAll;\n"
+						"end\n"
+						"\n"
+						"    \n"
+						"if ( movecount >= DIFFTHING || startflag == 1 )\n"
+						"    \n"
+						"    if  DirectionCode == 1    %Forward\n"
+						"        MoveForward(1);\n"
+						"    elseif  DirectionCode == 2  %Left\n"
+						"        MoveLeft ( 1 );\n"
+						"    elseif DirectionCode == 3  %Right\n"
+						"        MoveRight ( 1 );\n"
+						"    end\n"
+						"\n"
+						"    MoveForward(1);\n"
+						"    movecount = 0;\n"
+						"\n"
+						"end\n"
+						""
+			editorLayout             		"100 M4x1[25 25 576 462]"
+			treatIntsAsFixpt         		0
+		}
+	}
+
+	junction {
+		id         		4
+		position   		[23.5747 49.5747 7]
+		chart      		2
+		linkNode   		[2 0 0]
+		subviewer  		2
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	transition {
+		id             		5
+		labelString    		"{eML_blk_kernel();}"
+		labelPosition  		[32.125 19.875 102.544 14.964]
+		fontSize       		12
+		src {
+			intersection		[0 0 1 0 23.5747 14.625 0 0]
+		}
+		dst {
+			id          		4
+			intersection		[7 0 -1 -1 23.5747 42.5747 0 0]
+		}
+		midPoint       		[23.5747 24.9468]
+		chart          		2
+		linkNode       		[2 0 0]
+		dataLimits     		[23.575 23.575 14.625 34.575]
+		subviewer      		2
+		drawStyle      		SMART
+		executionOrder 		1
+	}
+
+	data {
+		id                            		6
+		name                          		"DirectionCode"
+		linkNode                      		[2 0 7]
+		scope                         		INPUT_DATA
+		machine                       		1
+		props {
+			array {
+				size      		"-1"
+			}
+			type {
+				method    		SF_INHERITED_TYPE
+				primitive 		SF_DOUBLE_TYPE
+				isSigned  		1
+				wordLength		"16"
+			}
+			complexity  		SF_COMPLEX_INHERITED
+		}
+		dataType                      		"inherited"
+		complexity                    		SF_COMPLEX_INHERITED
+	}
+
+	data {
+		id                            		7
+		name                          		"BlobCount"
+		linkNode                      		[2 6 0]
+		scope                         		INPUT_DATA
+		machine                       		1
+		props {
+			array {
+				size      		"-1"
+			}
+			type {
+				method    		SF_INHERITED_TYPE
+				primitive 		SF_DOUBLE_TYPE
+				isSigned  		1
+				wordLength		"16"
+			}
+			complexity  		SF_COMPLEX_INHERITED
+		}
+		dataType                      		"inherited"
+		complexity                    		SF_COMPLEX_INHERITED
+	}
+
+	instance {
+		id     		8
+		name   		"Display Results/Display bounding boxes/NavigationLogic/Embedded\n"
+					"MATLAB Function1"
+		machine		1
+		chart  		2
+	}
+
+	chart {
+		id                                        		9
+		name                                      		"Display Results/Display bounding boxes/Embedded\n"
+					"MATLAB Function"
+		windowPosition                            		[296.813 314.45 200.25 189.75]
+		viewLimits                                		[0 156.75 0 153.75]
+		screen                                    		[1 1 1280 1024 1.333333333333333]
+		treeNode                                  		[0 10 0 0]
+		firstTransition                           		12
+		firstJunction                             		11
+		viewObj                                   		9
+		machine                                   		1
+		decomposition                             		CLUSTER_CHART
+		type                                      		EML_CHART
+		firstData                                 		13
+		chartFileNumber                           		2
+		disableImplicitCasting                    		1
+		eml {
+			name       		"ObjectTracker"
+		}
+	}
+
+	state {
+		id                           		10
+		labelString                  		"eML_blk_kernel()"
+		position                     		[18 64.5 118 66]
+		fontSize                     		12
+		chart                        		9
+		treeNode                     		[9 0 0 0]
+		superState                   		SUBCHART
+		subviewer                    		9
+		type                         		FUNC_STATE
+		decomposition                		CLUSTER_STATE
+		eml {
+			isEML                    		1
+			script                   		"function [CentroidCoords,LineVector, CentroidCol] = ObjectT"
+						"racker(CentroidArray,booleof,StartCoords,VidSize)\n"
+						"% This block supports an embeddable subset of the MATLAB la"
+						"nguage.\n"
+						"% See the help menu for details. \n"
+						"persistent LastCentroid;\n"
+						"\n"
+						"if isempty(LastCentroid) || booleof == true\n"
+						"    LastCentroid = StartCoords;\n"
+						"end\n"
+						"\n"
+						"z = LastCentroid;\n"
+						"\n"
+						"allx = CentroidArray(1,:) - z(1);\n"
+						"ally = CentroidArray(2,:) - z(2);\n"
+						"myvector =  sqrt(allx.^2 + ally.^2);\n"
+						"[m i] = min (myvector);\n"
+						"centroid = CentroidArray(:,i(1));\n"
+						"\n"
+						"if myvector(i(1)) < 100 && centroid(1) > 0 && centroid(2) >"
+						" 10\n"
+						"    LastCentroid = centroid;\n"
+						"    CentroidCoords = centroid;\n"
+						"else\n"
+						"    CentroidCoords = z;\n"
+						"end\n"
+						"\n"
+						"LineVector = [ VidSize(1) , VidSize(2)/2 , CentroidCoords(1"
+						") , CentroidCoords(2) ];\n"
+						"CentroidCol = CentroidCoords(2);\n"
+						""
+			editorLayout             		"100 M4x1[5 5 1032 748]"
+			treatIntsAsFixpt         		0
+		}
+	}
+
+	junction {
+		id         		11
+		position   		[23.5747 49.5747 7]
+		chart      		9
+		linkNode   		[9 0 0]
+		subviewer  		9
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	transition {
+		id             		12
+		labelString    		"{eML_blk_kernel();}"
+		labelPosition  		[32.125 19.875 102.544 14.964]
+		fontSize       		12
+		src {
+			intersection		[0 0 1 0 23.5747 14.625 0 0]
+		}
+		dst {
+			id          		11
+			intersection		[7 0 -1 -1 23.5747 42.5747 0 0]
+		}
+		midPoint       		[23.5747 24.9468]
+		chart          		9
+		linkNode       		[9 0 0]
+		dataLimits     		[21.175 25.975 14.625 42.575]
+		subviewer      		9
+		drawStyle      		SMART
+		executionOrder 		1
+	}
+
+	data {
+		id                            		13
+		name                          		"CentroidCoords"
+		linkNode                      		[9 0 14]
+		scope                         		OUTPUT_DATA
+		machine                       		1
+		props {
+			array {
+				size      		"-1"
+			}
+			type {
+				method    		SF_INHERITED_TYPE
+			}
+			complexity  		SF_COMPLEX_INHERITED
+		}
+		dataType                      		"inherited"
+		fixptType {
+			slope   		1
+			baseType		SF_INT16_TYPE
+		}
+		complexity                    		SF_COMPLEX_INHERITED
+	}
+
+	data {
+		id                            		14
+		name                          		"CentroidArray"
+		linkNode                      		[9 13 15]
+		scope                         		INPUT_DATA
+		machine                       		1
+		props {
+			array {
+				size      		"-1"
+			}
+			type {
+				method    		SF_INHERITED_TYPE
+				primitive 		SF_DOUBLE_TYPE
+				isSigned  		1
+				wordLength		"16"
+			}
+			complexity  		SF_COMPLEX_INHERITED
+		}
+		dataType                      		"inherited"
+		complexity                    		SF_COMPLEX_INHERITED
+	}
+
+	data {
+		id                            		15
+		name                          		"LineVector"
+		linkNode                      		[9 14 16]
+		scope                         		OUTPUT_DATA
+		machine                       		1
+		props {
+			array {
+				size      		"-1"
+			}
+			type {
+				method    		SF_INHERITED_TYPE
+				primitive 		SF_DOUBLE_TYPE
+				isSigned  		1
+				wordLength		"16"
+			}
+			complexity  		SF_COMPLEX_INHERITED
+		}
+		dataType                      		"inherited"
+		complexity                    		SF_COMPLEX_INHERITED
+	}
+
+	data {
+		id                            		16
+		name                          		"booleof"
+		linkNode                      		[9 15 17]
+		scope                         		INPUT_DATA
+		machine                       		1
+		props {
+			array {
+				size      		"-1"
+			}
+			type {
+				method    		SF_INHERITED_TYPE
+				primitive 		SF_DOUBLE_TYPE
+				isSigned  		1
+				wordLength		"16"
+			}
+			complexity  		SF_COMPLEX_INHERITED
+		}
+		dataType                      		"inherited"
+		complexity                    		SF_COMPLEX_INHERITED
+	}
+
+	data {
+		id                            		17
+		name                          		"StartCoords"
+		linkNode                      		[9 16 18]
+		scope                         		INPUT_DATA
+		machine                       		1
+		props {
+			array {
+				size      		"-1"
+			}
+			type {
+				method    		SF_INHERITED_TYPE
+				primitive 		SF_DOUBLE_TYPE
+				isSigned  		1
+				wordLength		"16"
+			}
+			complexity  		SF_COMPLEX_INHERITED
+		}
+		dataType                      		"inherited"
+		complexity                    		SF_COMPLEX_INHERITED
+	}
+
+	data {
+		id                            		18
+		name                          		"VidSize"
+		linkNode                      		[9 17 19]
+		scope                         		INPUT_DATA
+		machine                       		1
+		props {
+			array {
+				size      		"-1"
+			}
+			type {
+				method    		SF_INHERITED_TYPE
+				primitive 		SF_DOUBLE_TYPE
+				isSigned  		1
+				wordLength		"16"
+			}
+			complexity  		SF_COMPLEX_INHERITED
+		}
+		dataType                      		"inherited"
+		complexity                    		SF_COMPLEX_INHERITED
+	}
+
+	data {
+		id                            		19
+		name                          		"CentroidCol"
+		linkNode                      		[9 18 0]
+		scope                         		OUTPUT_DATA
+		machine                       		1
+		props {
+			array {
+				size      		"-1"
+			}
+			type {
+				method    		SF_INHERITED_TYPE
+				primitive 		SF_DOUBLE_TYPE
+				isSigned  		1
+				wordLength		"16"
+			}
+			complexity  		SF_COMPLEX_INHERITED
+		}
+		dataType                      		"inherited"
+		complexity                    		SF_COMPLEX_INHERITED
+	}
+
+	instance {
+		id     		20
+		name   		"Display Results/Display bounding boxes/Embedded\n"
+					"MATLAB Function"
+		machine		1
+		chart  		9
+	}
+
+	chart {
+		id                                        		21
+		name                                      		"Display Results/Display bounding boxes/NavigationLogic/Embedded\n"
+					"MATLAB Function2"
+		windowPosition                            		[240.45 315 200.25 189.75]
+		viewLimits                                		[0 156.75 0 153.75]
+		screen                                    		[1 1 1024 768 1.333333333333333]
+		treeNode                                  		[0 22 0 0]
+		firstTransition                           		24
+		firstJunction                             		23
+		viewObj                                   		21
+		machine                                   		1
+		decomposition                             		CLUSTER_CHART
+		type                                      		EML_CHART
+		firstData                                 		25
+		chartFileNumber                           		3
+		disableImplicitCasting                    		1
+		eml {
+			name       		"DirectionTest"
+		}
+	}
+
+	state {
+		id                           		22
+		labelString                  		"eML_blk_kernel()"
+		position                     		[18 64.5 118 66]
+		fontSize                     		12
+		chart                        		21
+		treeNode                     		[21 0 0 0]
+		superState                   		SUBCHART
+		subviewer                    		21
+		type                         		FUNC_STATE
+		decomposition                		CLUSTER_STATE
+		eml {
+			isEML                    		1
+			script                   		"function DirectionCode = DirectionTest(CentroidCol, StartCo"
+						"ords, BlobCount)\n"
+						"\n"
+						"STRAIGHT = 1;\n"
+						"LEFT = 2;\n"
+						"RIGHT = 3;\n"
+						"STOP = 4;\n"
+						"\n"
+						"DIFFTHRESHOLD = 20;\n"
+						"ScreenCenter = StartCoords(2);\n"
+						"\n"
+						"if BlobCount == 0\n"
+						"    DirectionCode = STOP;\n"
+						"elseif CentroidCol < ScreenCenter - DIFFTHRESHOLD\n"
+						"    DirectionCode = LEFT;\n"
+						"elseif CentroidCol > ScreenCenter + DIFFTHRESHOLD\n"
+						"    DirectionCode = RIGHT;\n"
+						"else\n"
+						"    DirectionCode = STRAIGHT;\n"
+						"end\n"
+						"\n"
+						"\n"
+						"\n"
+						"\n"
+						"\n"
+						"\n"
+						"\n"
+						"\n"
+						"\n"
+						"\n"
+						"        "
+			editorLayout             		"100 M4x1[25 25 1032 748]"
+			treatIntsAsFixpt         		0
+		}
+	}
+
+	junction {
+		id         		23
+		position   		[23.5747 49.5747 7]
+		chart      		21
+		linkNode   		[21 0 0]
+		subviewer  		21
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	transition {
+		id             		24
+		labelString    		"{eML_blk_kernel();}"
+		labelPosition  		[32.125 19.875 102.544 14.964]
+		fontSize       		12
+		src {
+			intersection		[0 0 1 0 23.5747 14.625 0 0]
+		}
+		dst {
+			id          		23
+			intersection		[7 0 -1 -1 23.5747 42.5747 0 0]
+		}
+		midPoint       		[23.5747 24.9468]
+		chart          		21
+		linkNode       		[21 0 0]
+		dataLimits     		[23.575 23.575 14.625 34.575]
+		subviewer      		21
+		drawStyle      		SMART
+		executionOrder 		1
+	}
+
+	data {
+		id                            		25
+		name                          		"CentroidCol"
+		linkNode                      		[21 0 26]
+		scope                         		INPUT_DATA
+		machine                       		1
+		props {
+			array {
+				size      		"-1"
+			}
+			type {
+				method    		SF_INHERITED_TYPE
+			}
+			complexity  		SF_COMPLEX_INHERITED
+		}
+		dataType                      		"inherited"
+		fixptType {
+			slope   		1
+			baseType		SF_INT16_TYPE
+		}
+		complexity                    		SF_COMPLEX_INHERITED
+	}
+
+	data {
+		id                            		26
+		name                          		"StartCoords"
+		linkNode                      		[21 25 27]
+		scope                         		INPUT_DATA
+		machine                       		1
+		props {
+			array {
+				size      		"-1"
+			}
+			type {
+				method    		SF_INHERITED_TYPE
+				primitive 		SF_DOUBLE_TYPE
+				isSigned  		1
+				wordLength		"16"
+			}
+			complexity  		SF_COMPLEX_INHERITED
+		}
+		dataType                      		"inherited"
+		complexity                    		SF_COMPLEX_INHERITED
+	}
+
+	data {
+		id                            		27
+		name                          		"DirectionCode"
+		linkNode                      		[21 26 28]
+		scope                         		OUTPUT_DATA
+		machine                       		1
+		props {
+			array {
+				size      		"-1"
+			}
+			type {
+				method    		SF_INHERITED_TYPE
+				primitive 		SF_DOUBLE_TYPE
+				isSigned  		1
+				wordLength		"16"
+			}
+			complexity  		SF_COMPLEX_INHERITED
+		}
+		dataType                      		"inherited"
+		complexity                    		SF_COMPLEX_INHERITED
+	}
+
+	data {
+		id                            		28
+		name                          		"BlobCount"
+		linkNode                      		[21 27 0]
+		scope                         		INPUT_DATA
+		machine                       		1
+		props {
+			array {
+				size      		"-1"
+			}
+			type {
+				method    		SF_INHERITED_TYPE
+				primitive 		SF_DOUBLE_TYPE
+				isSigned  		1
+				wordLength		"16"
+			}
+			complexity  		SF_COMPLEX_INHERITED
+		}
+		dataType                      		"inherited"
+		complexity                    		SF_COMPLEX_INHERITED
+	}
+
+	instance {
+		id     		29
+		name   		"Display Results/Display bounding boxes/NavigationLogic/Embedded\n"
+					"MATLAB Function2"
+		machine		1
+		chart  		21
+	}
+
+	target {
+		id                        		30
+		name                      		"sfun"
+		description               		"Default Simulink S-Function Target."
+		machine                   		1
+		linkNode                  		[1 0 0]
+	}
+}

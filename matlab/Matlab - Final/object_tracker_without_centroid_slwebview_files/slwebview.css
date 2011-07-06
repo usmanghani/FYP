@@ -1,0 +1,27 @@
+
+/* Cascading Style Sheet for the Simulink Web View
+
+  Copyright 1997-2005 The MathWorks, Inc.
+  $Revision: 1.1.6.1 $  $Date: 2005/12/19 07:33:59 $
+*/
+
+.proptable {
+   pointer-events: none;
+   opacity: .95;
+}
+
+/*
+.hasprop {
+  onclick: changeSys(evt);
+  onmouseover: showPropAndHighlight(evt);
+  onmouseout: hidePropAndUnhighlight(evt);
+}
+*/
+
+.canvas {
+/*  preserveAspectRatio: xMinYMin meet;*/
+} 
+
+.scrim {
+  stroke: none;
+}

@@ -1,0 +1,269 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <title>LabelMe Matlab Toolbox</title>
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+ <LINK REL="SHORTCUT ICON" HREF="http://people.csail.mit.edu/brussell/research/LabelMe/favicon16.ico">
+ <META NAME="KEYWORDS"
+ CONTENT="LabelMe, open annotation tool, images, database, matlab, object">
+<script type="text/javascript" src="js/my_scripts-ver16.js"></script>
+</head>
+
+<body text="#333300" bgcolor="#ffffff" link="#006600" vlink="#003300" alink="#003300">
+
+<script type="text/javascript">
+WriteLogMsg('*Toolbox_page');
+</script> 
+
+<table border="0" width="800" style="WIDTH: 800px" background="">
+
+<tr>
+<td  width="200px">
+<DIV align=left>
+<a href="http://people.csail.mit.edu/brussell/research/LabelMe/intro.html">
+<IMG src="LabelMe198x55.gif" width=198 height=55 border=0>
+</a>
+</DIV>
+<font size=1> Release February 1, 2006 </font> <br>
+<DIV align=right><IMG src="annotation.gif" width=96 height=69 border=0 align=left><IMG src="matlab.gif" width=71 height=69 border=0></DIV>
+</td>
+<td  width="20px">
+
+</td>
+<td width=780px">
+<br>
+<font size=5>
+ <b>MATLAB Toolbox for the LabelMe Image Database</b><br></font>
+<font size=3>
+
+<br>
+ <a href="http://people.csail.mit.edu/brussell/research/LabelMe/intro.html">LabelMe</a>
+ is a WEB-based image annotation tool that allows researchers to label images and share the annotations with
+ the rest of the community. If you use this toolbox, we only ask you to contribute to the database,
+ from time to time, by using the labeling tool.<br>
+<br>
+<br> 
+</font>
+</td>
+</tr>
+</table>
+
+<table border="0" width="800" style="WIDTH: 800px" background="">
+<tr>
+<td width="1000px">
+<hr align="Left" width="800" size="1"> 
+		<font size=6>
+			Setup
+		</font><br>
+1) <a href="http://people.csail.mit.edu/brussell/research/LabelMe/intro.html">Download</a> the database using the annotation tool<br>
+2) <a href="LabelMeToolbox.zip">Download</a> the toolbox<br>
+<br>
+
+
+<hr align="Left" width="800" size="1"> 
+		<font size=6>
+ Description of the functions in this toolbox		</font><br>
+
+<font size=3>
+ <b>Introduction</b><br>
+   <a href="demo.m">demo</a>                - contains examples of how to use several functions<br>
+
+<hr align="Left" width="800" size="1"> 
+ <b>LabelMe tools for reading and ploting the annotations of individual files</b><br>
+   <a href="LMread.m">LMread</a>              - reads one image and the corresponding annotation XML file<br>
+   <a href="LMplot.m">LMplot</a>              - image and polygons visualization<br>
+
+
+<hr align="Left" width="800" size="1"> 
+ <b>LabelMe Database tools</b><br>
+   <a href="LMdatabase.m">LMdatabase</a>          - loads all the annotations into a big database struct<br>
+   <a href="LMquery.m">LMquery</a>             - performs a query on the database<br>
+   <a href="LMdbshowscenes.m">LMdbshowscenes</a>      - shows thumbnails for the all the images in the database<br>
+   <a href="LMdbshowobjects.m">LMdbshowobjects</a>     - shows crops of the objects in the database.<br>
+   <a href="LMobjectnames.m">LMobjectnames</a>       - returns a list with the name of all the objects in the database<br>
+   <a href="LMobjectindex.m">LMobjectindex</a>       - retuns the indices of an object class within the annotation struct<br>
+   <a href="LMcountobject.m">LMcountobject</a>       - counts the number of instances of an object class in every image<br>
+    
+
+<hr align="Left" width="800" size="1"> 
+ <b>Image manipulation</b><br>
+   <a href="LMimread.m">LMimread</a>            - reads one image from the database<br>
+   <a href="LMimscale.m">LMimscale</a>           - scales the image and the corresponding annotation<br>
+   <a href="LMimcrop.m">LMimcrop</a>            - crops the image and the corresponding annotation<br>
+   <a href="LMimpad.m">LMimpad</a>             - pads an image with PADVAL and modifies the annotation<br>
+
+
+<hr align="Left" width="800" size="1"> 
+ <b>Objects, polygons and segmentation</b><br>
+   <a href="LMobjectpolygon.m">LMobjectpolygon</a>     - returns all the polygons for an object class within an image<br>
+   <a href="LMobjectmask.m">LMobjectmask</a>        - returns the segmentation mask for all object instances of one class within an image<br>
+   <a href="LMobjectsinsideimage.m">LMobjectsinsideimage</a>        - removes polygons outside the image boundary<br>
+
+
+<hr align="Left" width="800" size="1"> 
+ <b>Creation of training and test images and databases</b><br>
+   <a href="LMcookimage.m">LMcookimage</a>         - reformat an image and annotation to fit certain requirements.<br>
+   <a href="LMcookdatabase.m">LMcookdatabase</a>      - create tuned databases (you can control the difficulty, the object size, ...)<br>
+
+<hr align="Left" width="800" size="1"> 
+ <b>Communication with online annotation tool</b><br>
+   <a href="LMphotoalbum.m">LMphotoalbum</a>         - creates a web page with thumbnails and connected to LabelMe online.<br>
+   <a href="LMthumbnailsbar.m">LMthumbnailsbar</a>      - creates a bar of thumbnails connected to LabelMe online<br>
+
+<hr align="Left" width="800" size="1"> 
+ <b>Install and update images and annotations</b><br>
+<a href="LMinstall.m">LMinstall</a>      - installs the database<br>
+<a href="LMupdate.m">LMupdate</a>      - authomatic update of the annotations for specific files<br>
+<a href="LMprogressiveinstall.m">LMprogressiveinstall</a>      - will update your local copy of the images with only the new images and also download all of the annotations<br>
+
+
+<hr align="Left" width="800" size="1"> 
+ <b>Translation from/to other formats</b><br>
+   <a href="PAS2LM.m">PAS2LM</a>     - Translates PASCAL format to LabelMe <br>
+   <a href="LM2OpenCV.m">LM2OpenCV</a>        - will output a query in format usable for OpenCV Haar<br>
+
+<hr align="Left" width="800" size="1"> 
+ <b>Evaluation for object detection</b><br>
+   <a href="LMrecallPrecision.m">LMrecallPrecision</a>     - Precision-recall curve<br>
+
+
+
+
+<hr align="Left" width="800" size="1"> 
+ <b>XML tools</b> (translates the XML files into MATLAB struct arrays)<br>
+   <a href="writeXML.m">writeXML</a>            - translates a struct array into a XML file<br>
+   <a href="loadXML.m">loadXML</a>             - read XML file<br>
+   <a href="drawXML.m">drawXML</a>             - shows the image and plots the polygons<br>
+   <a href="xml2struct.m">xml2struct</a>          - translates a XML string into a matlab struct<br>
+   <a href="struct2xml.m">struct2xml<a>          - translates a matlab struct into a XML string<br>
+
+<hr align="Left" width="800" size="1"> 
+		<font size=6>
+			Object detection code
+		</font><br>
+
+<a href="http://people.csail.mit.edu/torralba/iccv2005/boosting/boosting.html">A simple object detector using boosting</a> - object detection with boosting trained with this dataset<br>
+<br>
+ </font></DIV>
+</td>
+</tr>
+</table>
+<table border="0" width="800" style="WIDTH: 800px" background="">
+<tr>
+<td  width="800px">
+<hr align="Left" width="800" size="1"> 
+<font size=6>
+<b>Examples</b>
+</font><br>
+First, you need to download the <a href="http://people.csail.mit.edu/brussell/research/LabelMe/intro.html">LabelMe database</a>
+<br>
+<br>
+% Define the root folder for the images<br>
+HOMEIMAGES = 'C:\yourpath\Images'; % you can set here your default folder<br>
+HOMEANNOTATIONS = 'C:\yourpath\Annotations'; % you can set here your default folder<br>
+<br>
+% This line reads the entire database into a Matlab struct<br>
+database = LMdatabase(HOMEANNOTATIONS);<br>
+<br>
+% Street scenes<br>
+% To get images that have trees, buildings and roads:<br>
+[D,j1] = LMquery(database, 'object.name', 'building');<br>
+[D,j2] = LMquery(database, 'object.name', 'road');<br>
+[D,j3] = LMquery(database, 'object.name', 'tree');<br>
+j = intersect(intersect(j1,j2),j3);<br>
+LMdbshowscenes(LMquery(database(j), 'object.name', 'car,building,road,tree'), HOMEIMAGES);<br>
+<br>
+<DIV align=left>
+<IMG src="exampleShowscenes.gif" width=800 height=240 border=0>
+</DIV>
+<br>
+% You can query the database looking for specific objects and visualize each instance in isolation:<br>
+LMdbshowobjects(LMquery(database, 'object.name', 'bottle'), HOMEIMAGES);<br>
+<br>
+<DIV align=left>
+<IMG src="bottle.gif" width=800 height=212 border=0>
+</DIV>
+<br>
+
+<b>Creating training and test databases:</b> the next lines show how you can create a database in which you can control the difficulty for detecting a specific object (or a set of objects). For instance, the next lines create a specialized database of images that contain only one computer screen, viewed from the front, keyboards and mouses. Furthermore, we want to normalize in size each image such that each screen has a size of 64x64 pixels, and each image has a maximal size of 128x128 pixels. <br>
+<br>
+% First, define the root folder for the new database<br>
+NEWHOMEIMAGES = 'C:\yourpath\newdatabase\office\Images'; % you can set here your default folder<br>
+NEWHOMEANNOTATIONS = 'C:\yourpath\newdatabase\office\Annotations'; % you can set here your default folder<br>
+<br>
+% Then, locate street scenes with frontal views of screens. <br>
+[D,j]  = LMquery(database, 'object.name', 'screen+frontal');<br>
+<br>
+% and now select the images with only one screen. <br>
+counts = LMcountobject(database(j), 'screen');<br>
+j = j(find(counts==1));<br>
+D  = LMquery(database(j), 'object.name', 'screen,keyboard,mouse-pad');<br>
+<br>
+% Finally, cook database to fit our requirements<br>
+LMcookdatabase(D, HOMEIMAGES, HOMEANNOTATIONS, NEWHOMEIMAGES, NEWHOMEANNOTATIONS, ...<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'objectname', 'screen', 'objectsize', [64 64], 'objectlocation', 'original','maximagesize', [128 128])<br>
+<br>
+% Load new database<br>
+newdatabase = LMdatabase(NEWHOMEANNOTATIONS);<br>
+% Show images:<br>
+LMdbshowscenes(newdatabase, NEWHOMEIMAGES);<br>
+<br>
+<DIV align=left>
+<IMG src="onescreen.gif" width=800 height=253 border=0>
+</DIV>
+<br>
+<b>Communication with the online tool</b><br>
+You can look in the demo.m file, at the end there is a description that
+explains how can you talk, using Matlab, with the online annotation tool to label only
+the images that you want and how to get back just those labels and update you
+annotation file. The effect is like if the annotation tool was just working for
+you, but still all the annotations that you will enter will be shared and
+stored online.<br>
+<br>
+The first function you have to look at is:<br>
+<br>
+LMphotoalbum(folderlist, filelist, webpagename, HOMEIMAGES);<br>
+<br>
+This function will create a web page with thumbnails with the images that you
+want (look at demo.m to see how to use this with LMquery). If you click in any
+thumbnail it will open LabelMe online showing that image and allowing you to
+add polygons to it.<br>
+<br>
+Once you are done labeling images, you can update the annotations using:<br>
+<br>
+LMupdate(folderlist, filelist, HOMEIMAGES, HOMEANNOTATIONS);<br>
+<br>
+This function reads the annotations from the web and replaces your local files with the new
+ones. So, you can get inmediately all the labels you enter.<br>
+<br>
+The result is that the system will behave as if you had a local copy of the
+annotation tool. And still, everything that you will label, will be shared.<br>
+<br>
+The next command creates a web page that adds thumbnails to the LabelMe annotation tool:
+<br><br>LMthumbnailsbar(folderlist, filelist, 'myphotoalbum.html', HOMEIMAGES);<br>
+<br>
+The web page created will look like this:<br>
+<DIV align=left>
+<IMG src="labelmeBar.gif" width=698 height=522 border=0>
+</DIV>
+
+<hr align="Left" width="800" size="1"> 
+
+</td>
+</tr>
+</table>
+
+<!--WEBBOT bot="HTMLMarkup" startspan ALT="Site Meter" -->
+<script type="text/javascript" language="JavaScript">var site="s21labelme"</script>
+<script type="text/javascript" language="JavaScript1.2" src="http://s21.sitemeter.com/js/counter.js?site=s21labelme">
+</script>
+<noscript>
+<a href="http://s21.sitemeter.com/stats.asp?site=s21labelme" target="_top">
+<img src="http://s21.sitemeter.com/meter.asp?site=s21labelme" alt="Site Meter" border="0"/></a>
+</noscript>
+<!-- Copyright (c)2005 Site Meter -->
+<!--WEBBOT bot="HTMLMarkup" Endspan -->
+
+</body>
+</html>
+

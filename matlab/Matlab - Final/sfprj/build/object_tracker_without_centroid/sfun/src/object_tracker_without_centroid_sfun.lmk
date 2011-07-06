@@ -1,0 +1,40 @@
+CC     = "c:\program files\matlab\r2006a\sys\lcc\bin\lcc.exe"
+LD     = "c:\program files\matlab\r2006a\sys\lcc\bin\lcclnk.exe"
+LIBCMD = "c:\program files\matlab\r2006a\sys\lcc\bin\lcclib.exe"
+CFLAGS = -c -Zp8 -DMATLAB_MEX_FILE -noregistrylookup
+LDFLAGS = -s -dll -L"c:\program files\matlab\r2006a\sys\lcc\lib"
+LIBFLAGS = 
+
+OBJECTS = \
+	"object_tracker_without_centroid_sfun.obj"\
+	"object_tracker_without_centroid_sfun_registry.obj"\
+	"c1_object_tracker_without_centroid.obj"\
+	"c2_object_tracker_without_centroid.obj"\
+	"c3_object_tracker_without_centroid.obj"\
+	"lccstub.obj"\
+	"c:\program files\matlab\r2006a\sys\lcc\mex\lccdef.def"\
+	"c:\program files\matlab\r2006a\stateflow\c\debugger\lib\win32\sfc_debuglcc.lib"\
+	"c:\program files\matlab\r2006a\stateflow\c\mex\lib\win32\sfc_mexlcc.lib"\
+	"c:\program files\matlab\r2006a\extern\lib\win32\lcc\libmex.lib"\
+	"c:\program files\matlab\r2006a\extern\lib\win32\lcc\libmx.lib"\
+	"c:\program files\matlab\r2006a\extern\lib\win32\lcc\libfixedpoint.lib"\
+	"c:\program files\matlab\r2006a\extern\lib\win32\lcc\libut.lib"\
+	"c:\program files\matlab\r2006a\toolbox\dspblks\lib\win32\dsp_dyn_rt_lcc.lib"\
+
+INCLUDE_PATH= -I"c:\program files\matlab\r2006a\sys\lcc\include"  -I"c:\program files\matlab\r2006a\extern\include"  -I"c:\program files\matlab\r2006a\simulink\include"  -I"c:\program files\matlab\r2006a\stateflow\c\mex\include"  -I"c:\program files\matlab\r2006a\stateflow\c\debugger\include"  -I"c:\program files\matlab\r2006a\toolbox\eml\lib\dsp"  -I"d:\fyp\whiz\sfprj\build\object_tracker_without_centroid\sfun\src"  -I"d:\fyp\whiz" 
+ 
+
+object_tracker_without_centroid_sfun.mexw32 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o object_tracker_without_centroid_sfun.mexw32 @object_tracker_without_centroid_sfun.lmko
+object_tracker_without_centroid_sfun.obj :	"object_tracker_without_centroid_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "object_tracker_without_centroid_sfun.c"
+object_tracker_without_centroid_sfun_registry.obj :	"object_tracker_without_centroid_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "object_tracker_without_centroid_sfun_registry.c"
+c1_object_tracker_without_centroid.obj :	"c1_object_tracker_without_centroid.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c1_object_tracker_without_centroid.c"
+c2_object_tracker_without_centroid.obj :	"c2_object_tracker_without_centroid.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_object_tracker_without_centroid.c"
+c3_object_tracker_without_centroid.obj :	"c3_object_tracker_without_centroid.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c3_object_tracker_without_centroid.c"
+lccstub.obj :	"c:\program files\matlab\r2006a\sys\lcc\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c:\program files\matlab\r2006a\sys\lcc\mex\lccstub.c"
